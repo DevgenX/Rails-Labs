@@ -1,0 +1,79 @@
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "birds"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "birds" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "species" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20230221193258)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", "2023-02-21 19:36:25.059001"], ["updated_at", "2023-02-21 19:36:25.059001"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "0c9e2903f2f03610428869bb2678217ccadd6533"], ["created_at", "2023-02-21 19:36:25.060385"], ["updated_at", "2023-02-21 19:36:25.060385"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBird Create (0.2ms)[0m  [1m[32mINSERT INTO "birds" ("name", "species", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Black-Capped Chickadee"], ["species", "Poecile Atricapillus"], ["created_at", "2023-02-21 19:36:25.078661"], ["updated_at", "2023-02-21 19:36:25.078661"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBird Create (0.0ms)[0m  [1m[32mINSERT INTO "birds" ("name", "species", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Grackle"], ["species", "Quiscalus Quiscula"], ["created_at", "2023-02-21 19:36:25.079505"], ["updated_at", "2023-02-21 19:36:25.079505"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBird Create (0.0ms)[0m  [1m[32mINSERT INTO "birds" ("name", "species", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Common Starling"], ["species", "Sturnus Vulgaris"], ["created_at", "2023-02-21 19:36:25.079791"], ["updated_at", "2023-02-21 19:36:25.079791"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBird Create (0.0ms)[0m  [1m[32mINSERT INTO "birds" ("name", "species", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Mourning Dove"], ["species", "Zenaida Macroura"], ["created_at", "2023-02-21 19:36:25.080073"], ["updated_at", "2023-02-21 19:36:25.080073"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/birds" for 127.0.0.1 at 2023-02-21 14:36:25 -0500
+Processing by BirdsController#index as HTML
+  [1m[36mBird Load (0.1ms)[0m  [1m[34mSELECT "birds".* FROM "birds"[0m
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.1ms | Allocations: 3828)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBird Create (0.2ms)[0m  [1m[32mINSERT INTO "birds" ("name", "species", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Black-Capped Chickadee"], ["species", "Poecile Atricapillus"], ["created_at", "2023-02-21 19:36:25.095415"], ["updated_at", "2023-02-21 19:36:25.095415"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBird Create (0.0ms)[0m  [1m[32mINSERT INTO "birds" ("name", "species", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Grackle"], ["species", "Quiscalus Quiscula"], ["created_at", "2023-02-21 19:36:25.096161"], ["updated_at", "2023-02-21 19:36:25.096161"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBird Create (0.0ms)[0m  [1m[32mINSERT INTO "birds" ("name", "species", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Common Starling"], ["species", "Sturnus Vulgaris"], ["created_at", "2023-02-21 19:36:25.096462"], ["updated_at", "2023-02-21 19:36:25.096462"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBird Create (0.0ms)[0m  [1m[32mINSERT INTO "birds" ("name", "species", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Mourning Dove"], ["species", "Zenaida Macroura"], ["created_at", "2023-02-21 19:36:25.096725"], ["updated_at", "2023-02-21 19:36:25.096725"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mBird Load (0.0ms)[0m  [1m[34mSELECT "birds".* FROM "birds" ORDER BY "birds"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/birds/1" for 127.0.0.1 at 2023-02-21 14:36:25 -0500
+Processing by BirdsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBird Load (0.1ms)[0m  [1m[34mSELECT "birds".* FROM "birds" WHERE "birds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 854)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBird Create (0.2ms)[0m  [1m[32mINSERT INTO "birds" ("name", "species", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Black-Capped Chickadee"], ["species", "Poecile Atricapillus"], ["created_at", "2023-02-21 19:36:25.101876"], ["updated_at", "2023-02-21 19:36:25.101876"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBird Create (0.0ms)[0m  [1m[32mINSERT INTO "birds" ("name", "species", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Grackle"], ["species", "Quiscalus Quiscula"], ["created_at", "2023-02-21 19:36:25.102481"], ["updated_at", "2023-02-21 19:36:25.102481"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBird Create (0.0ms)[0m  [1m[32mINSERT INTO "birds" ("name", "species", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Common Starling"], ["species", "Sturnus Vulgaris"], ["created_at", "2023-02-21 19:36:25.102750"], ["updated_at", "2023-02-21 19:36:25.102750"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBird Create (0.0ms)[0m  [1m[32mINSERT INTO "birds" ("name", "species", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Mourning Dove"], ["species", "Zenaida Macroura"], ["created_at", "2023-02-21 19:36:25.103002"], ["updated_at", "2023-02-21 19:36:25.103002"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mBird Load (0.0ms)[0m  [1m[34mSELECT "birds".* FROM "birds" ORDER BY "birds"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+Started GET "/birds/2" for 127.0.0.1 at 2023-02-21 14:36:25 -0500
+Processing by BirdsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBird Load (0.0ms)[0m  [1m[34mSELECT "birds".* FROM "birds" WHERE "birds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 342)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m

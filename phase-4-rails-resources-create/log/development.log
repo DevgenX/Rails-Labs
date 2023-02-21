@@ -1,0 +1,37 @@
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateBirds (20210502132944)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "birds" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "species" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210502132944"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-02-21 20:30:18.764993"], ["updated_at", "2023-02-21 20:30:18.764993"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBird Create (0.3ms)[0m  [1m[32mINSERT INTO "birds" ("name", "species", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Black-Capped Chickadee"], ["species", "Poecile Atricapillus"], ["created_at", "2023-02-21 20:30:18.779315"], ["updated_at", "2023-02-21 20:30:18.779315"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBird Create (0.1ms)[0m  [1m[32mINSERT INTO "birds" ("name", "species", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Grackle"], ["species", "Quiscalus Quiscula"], ["created_at", "2023-02-21 20:30:18.781238"], ["updated_at", "2023-02-21 20:30:18.781238"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBird Create (0.2ms)[0m  [1m[32mINSERT INTO "birds" ("name", "species", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Common Starling"], ["species", "Sturnus Vulgaris"], ["created_at", "2023-02-21 20:30:18.782538"], ["updated_at", "2023-02-21 20:30:18.782538"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBird Create (0.2ms)[0m  [1m[32mINSERT INTO "birds" ("name", "species", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Mourning Dove"], ["species", "Zenaida Macroura"], ["created_at", "2023-02-21 20:30:18.783889"], ["updated_at", "2023-02-21 20:30:18.783889"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBird Create (0.4ms)[0m  [1m[32mINSERT INTO "birds" ("name", "species", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "HOHOHOH"], ["species", "Thunder"], ["created_at", "2023-02-21 20:33:25.893073"], ["updated_at", "2023-02-21 20:33:25.893073"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBird Load (0.5ms)[0m  [1m[34mSELECT "birds".* FROM "birds" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mBird Load (0.3ms)[0m  [1m[34mSELECT "birds".* FROM "birds" ORDER BY "birds"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mBird Load (0.3ms)[0m  [1m[34mSELECT "birds".* FROM "birds" ORDER BY "birds"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
