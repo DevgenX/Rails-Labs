@@ -1,0 +1,297 @@
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "plants"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "plants" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "image" varchar, "price" float, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20230221204105)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", "2023-02-21 20:46:43.896717"], ["updated_at", "2023-02-21 20:46:43.896717"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "503bceda85fe4073e6f6d4bde5218eeb5f95b955"], ["created_at", "2023-02-21 20:46:43.898393"], ["updated_at", "2023-02-21 20:46:43.898393"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPlant Create (0.2ms)[0m  [1m[32mINSERT INTO "plants" ("name", "image", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Aloe"], ["image", "./images/aloe.jpg"], ["price", 15.99], ["created_at", "2023-02-21 20:46:43.919420"], ["updated_at", "2023-02-21 20:46:43.919420"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPlant Create (0.0ms)[0m  [1m[32mINSERT INTO "plants" ("name", "image", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "ZZ Plant"], ["image", "./images/zz-plant.jpg"], ["price", 25.98], ["created_at", "2023-02-21 20:46:43.920405"], ["updated_at", "2023-02-21 20:46:43.920405"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PATCH "/plants/1" for 127.0.0.1 at 2023-02-21 15:46:43 -0500
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPlant Create (0.2ms)[0m  [1m[32mINSERT INTO "plants" ("name", "image", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Aloe"], ["image", "./images/aloe.jpg"], ["price", 15.99], ["created_at", "2023-02-21 20:46:43.930834"], ["updated_at", "2023-02-21 20:46:43.930834"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPlant Create (0.0ms)[0m  [1m[32mINSERT INTO "plants" ("name", "image", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "ZZ Plant"], ["image", "./images/zz-plant.jpg"], ["price", 25.98], ["created_at", "2023-02-21 20:46:43.931527"], ["updated_at", "2023-02-21 20:46:43.931527"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/plants" for 127.0.0.1 at 2023-02-21 15:46:43 -0500
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPlant Create (0.2ms)[0m  [1m[32mINSERT INTO "plants" ("name", "image", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Aloe"], ["image", "./images/aloe.jpg"], ["price", 15.99], ["created_at", "2023-02-21 20:46:43.940424"], ["updated_at", "2023-02-21 20:46:43.940424"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPlant Create (0.0ms)[0m  [1m[32mINSERT INTO "plants" ("name", "image", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "ZZ Plant"], ["image", "./images/zz-plant.jpg"], ["price", 25.98], ["created_at", "2023-02-21 20:46:43.941162"], ["updated_at", "2023-02-21 20:46:43.941162"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPlant Load (0.0ms)[0m  [1m[34mSELECT "plants".* FROM "plants" ORDER BY "plants"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/plants/1" for 127.0.0.1 at 2023-02-21 15:46:43 -0500
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPlant Create (0.2ms)[0m  [1m[32mINSERT INTO "plants" ("name", "image", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Aloe"], ["image", "./images/aloe.jpg"], ["price", 15.99], ["created_at", "2023-02-21 20:46:43.946562"], ["updated_at", "2023-02-21 20:46:43.946562"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPlant Create (0.0ms)[0m  [1m[32mINSERT INTO "plants" ("name", "image", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "ZZ Plant"], ["image", "./images/zz-plant.jpg"], ["price", 25.98], ["created_at", "2023-02-21 20:46:43.947156"], ["updated_at", "2023-02-21 20:46:43.947156"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPlant Load (0.0ms)[0m  [1m[34mSELECT "plants".* FROM "plants" ORDER BY "plants"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+Started GET "/plants/2" for 127.0.0.1 at 2023-02-21 15:46:43 -0500
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPlant Create (0.3ms)[0m  [1m[32mINSERT INTO "plants" ("name", "image", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Aloe"], ["image", "./images/aloe.jpg"], ["price", 15.99], ["created_at", "2023-02-21 20:46:43.952902"], ["updated_at", "2023-02-21 20:46:43.952902"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPlant Create (0.0ms)[0m  [1m[32mINSERT INTO "plants" ("name", "image", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "ZZ Plant"], ["image", "./images/zz-plant.jpg"], ["price", 25.98], ["created_at", "2023-02-21 20:46:43.953881"], ["updated_at", "2023-02-21 20:46:43.953881"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "plants"[0m
+Started POST "/plants" for 127.0.0.1 at 2023-02-21 15:46:43 -0500
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPlant Create (0.6ms)[0m  [1m[32mINSERT INTO "plants" ("name", "image", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Aloe"], ["image", "./images/aloe.jpg"], ["price", 15.99], ["created_at", "2023-02-21 20:46:43.964337"], ["updated_at", "2023-02-21 20:46:43.964337"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPlant Create (0.0ms)[0m  [1m[32mINSERT INTO "plants" ("name", "image", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "ZZ Plant"], ["image", "./images/zz-plant.jpg"], ["price", 25.98], ["created_at", "2023-02-21 20:46:43.965384"], ["updated_at", "2023-02-21 20:46:43.965384"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/plants" for 127.0.0.1 at 2023-02-21 15:46:43 -0500
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPlant Create (0.2ms)[0m  [1m[32mINSERT INTO "plants" ("name", "image", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Aloe"], ["image", "./images/aloe.jpg"], ["price", 15.99], ["created_at", "2023-02-21 20:46:43.974377"], ["updated_at", "2023-02-21 20:46:43.974377"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPlant Create (0.0ms)[0m  [1m[32mINSERT INTO "plants" ("name", "image", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "ZZ Plant"], ["image", "./images/zz-plant.jpg"], ["price", 25.98], ["created_at", "2023-02-21 20:46:43.975515"], ["updated_at", "2023-02-21 20:46:43.975515"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/plants" for 127.0.0.1 at 2023-02-21 15:46:43 -0500
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPlant Create (0.3ms)[0m  [1m[32mINSERT INTO "plants" ("name", "image", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Aloe"], ["image", "./images/aloe.jpg"], ["price", 15.99], ["created_at", "2023-02-21 20:48:07.688567"], ["updated_at", "2023-02-21 20:48:07.688567"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPlant Create (0.0ms)[0m  [1m[32mINSERT INTO "plants" ("name", "image", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "ZZ Plant"], ["image", "./images/zz-plant.jpg"], ["price", 25.98], ["created_at", "2023-02-21 20:48:07.689449"], ["updated_at", "2023-02-21 20:48:07.689449"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PATCH "/plants/1" for 127.0.0.1 at 2023-02-21 15:48:07 -0500
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPlant Create (0.2ms)[0m  [1m[32mINSERT INTO "plants" ("name", "image", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Aloe"], ["image", "./images/aloe.jpg"], ["price", 15.99], ["created_at", "2023-02-21 20:48:07.698932"], ["updated_at", "2023-02-21 20:48:07.698932"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPlant Create (0.0ms)[0m  [1m[32mINSERT INTO "plants" ("name", "image", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "ZZ Plant"], ["image", "./images/zz-plant.jpg"], ["price", 25.98], ["created_at", "2023-02-21 20:48:07.699619"], ["updated_at", "2023-02-21 20:48:07.699619"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/plants" for 127.0.0.1 at 2023-02-21 15:48:07 -0500
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPlant Create (0.2ms)[0m  [1m[32mINSERT INTO "plants" ("name", "image", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Aloe"], ["image", "./images/aloe.jpg"], ["price", 15.99], ["created_at", "2023-02-21 20:48:07.708567"], ["updated_at", "2023-02-21 20:48:07.708567"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPlant Create (0.0ms)[0m  [1m[32mINSERT INTO "plants" ("name", "image", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "ZZ Plant"], ["image", "./images/zz-plant.jpg"], ["price", 25.98], ["created_at", "2023-02-21 20:48:07.709235"], ["updated_at", "2023-02-21 20:48:07.709235"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPlant Load (0.0ms)[0m  [1m[34mSELECT "plants".* FROM "plants" ORDER BY "plants"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/plants/1" for 127.0.0.1 at 2023-02-21 15:48:07 -0500
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPlant Create (0.2ms)[0m  [1m[32mINSERT INTO "plants" ("name", "image", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Aloe"], ["image", "./images/aloe.jpg"], ["price", 15.99], ["created_at", "2023-02-21 20:48:07.714647"], ["updated_at", "2023-02-21 20:48:07.714647"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPlant Create (0.0ms)[0m  [1m[32mINSERT INTO "plants" ("name", "image", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "ZZ Plant"], ["image", "./images/zz-plant.jpg"], ["price", 25.98], ["created_at", "2023-02-21 20:48:07.715257"], ["updated_at", "2023-02-21 20:48:07.715257"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPlant Load (0.0ms)[0m  [1m[34mSELECT "plants".* FROM "plants" ORDER BY "plants"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+Started GET "/plants/2" for 127.0.0.1 at 2023-02-21 15:48:07 -0500
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPlant Create (0.2ms)[0m  [1m[32mINSERT INTO "plants" ("name", "image", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Aloe"], ["image", "./images/aloe.jpg"], ["price", 15.99], ["created_at", "2023-02-21 20:48:07.722311"], ["updated_at", "2023-02-21 20:48:07.722311"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPlant Create (0.0ms)[0m  [1m[32mINSERT INTO "plants" ("name", "image", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "ZZ Plant"], ["image", "./images/zz-plant.jpg"], ["price", 25.98], ["created_at", "2023-02-21 20:48:07.723063"], ["updated_at", "2023-02-21 20:48:07.723063"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "plants"[0m
+Started POST "/plants" for 127.0.0.1 at 2023-02-21 15:48:07 -0500
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPlant Create (0.2ms)[0m  [1m[32mINSERT INTO "plants" ("name", "image", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Aloe"], ["image", "./images/aloe.jpg"], ["price", 15.99], ["created_at", "2023-02-21 20:48:07.733187"], ["updated_at", "2023-02-21 20:48:07.733187"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPlant Create (0.0ms)[0m  [1m[32mINSERT INTO "plants" ("name", "image", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "ZZ Plant"], ["image", "./images/zz-plant.jpg"], ["price", 25.98], ["created_at", "2023-02-21 20:48:07.734407"], ["updated_at", "2023-02-21 20:48:07.734407"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/plants" for 127.0.0.1 at 2023-02-21 15:48:07 -0500
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPlant Create (0.2ms)[0m  [1m[32mINSERT INTO "plants" ("name", "image", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Aloe"], ["image", "./images/aloe.jpg"], ["price", 15.99], ["created_at", "2023-02-21 20:48:07.742558"], ["updated_at", "2023-02-21 20:48:07.742558"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPlant Create (0.0ms)[0m  [1m[32mINSERT INTO "plants" ("name", "image", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "ZZ Plant"], ["image", "./images/zz-plant.jpg"], ["price", 25.98], ["created_at", "2023-02-21 20:48:07.743126"], ["updated_at", "2023-02-21 20:48:07.743126"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/plants" for 127.0.0.1 at 2023-02-21 15:48:07 -0500
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPlant Create (0.3ms)[0m  [1m[32mINSERT INTO "plants" ("name", "image", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Aloe"], ["image", "./images/aloe.jpg"], ["price", 15.99], ["created_at", "2023-02-21 20:48:31.000635"], ["updated_at", "2023-02-21 20:48:31.000635"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPlant Create (0.0ms)[0m  [1m[32mINSERT INTO "plants" ("name", "image", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "ZZ Plant"], ["image", "./images/zz-plant.jpg"], ["price", 25.98], ["created_at", "2023-02-21 20:48:31.001525"], ["updated_at", "2023-02-21 20:48:31.001525"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PATCH "/plants/1" for 127.0.0.1 at 2023-02-21 15:48:31 -0500
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPlant Create (0.2ms)[0m  [1m[32mINSERT INTO "plants" ("name", "image", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Aloe"], ["image", "./images/aloe.jpg"], ["price", 15.99], ["created_at", "2023-02-21 20:48:31.008018"], ["updated_at", "2023-02-21 20:48:31.008018"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPlant Create (0.0ms)[0m  [1m[32mINSERT INTO "plants" ("name", "image", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "ZZ Plant"], ["image", "./images/zz-plant.jpg"], ["price", 25.98], ["created_at", "2023-02-21 20:48:31.008616"], ["updated_at", "2023-02-21 20:48:31.008616"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/plants" for 127.0.0.1 at 2023-02-21 15:48:31 -0500
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPlant Create (0.1ms)[0m  [1m[32mINSERT INTO "plants" ("name", "image", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Aloe"], ["image", "./images/aloe.jpg"], ["price", 15.99], ["created_at", "2023-02-21 20:48:31.014292"], ["updated_at", "2023-02-21 20:48:31.014292"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPlant Create (0.0ms)[0m  [1m[32mINSERT INTO "plants" ("name", "image", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "ZZ Plant"], ["image", "./images/zz-plant.jpg"], ["price", 25.98], ["created_at", "2023-02-21 20:48:31.014774"], ["updated_at", "2023-02-21 20:48:31.014774"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPlant Load (0.0ms)[0m  [1m[34mSELECT "plants".* FROM "plants" ORDER BY "plants"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/plants/1" for 127.0.0.1 at 2023-02-21 15:48:31 -0500
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPlant Create (0.3ms)[0m  [1m[32mINSERT INTO "plants" ("name", "image", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Aloe"], ["image", "./images/aloe.jpg"], ["price", 15.99], ["created_at", "2023-02-21 20:48:31.020270"], ["updated_at", "2023-02-21 20:48:31.020270"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPlant Create (0.0ms)[0m  [1m[32mINSERT INTO "plants" ("name", "image", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "ZZ Plant"], ["image", "./images/zz-plant.jpg"], ["price", 25.98], ["created_at", "2023-02-21 20:48:31.021277"], ["updated_at", "2023-02-21 20:48:31.021277"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPlant Load (0.0ms)[0m  [1m[34mSELECT "plants".* FROM "plants" ORDER BY "plants"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+Started GET "/plants/2" for 127.0.0.1 at 2023-02-21 15:48:31 -0500
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPlant Create (0.1ms)[0m  [1m[32mINSERT INTO "plants" ("name", "image", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Aloe"], ["image", "./images/aloe.jpg"], ["price", 15.99], ["created_at", "2023-02-21 20:48:31.027005"], ["updated_at", "2023-02-21 20:48:31.027005"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPlant Create (0.0ms)[0m  [1m[32mINSERT INTO "plants" ("name", "image", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "ZZ Plant"], ["image", "./images/zz-plant.jpg"], ["price", 25.98], ["created_at", "2023-02-21 20:48:31.027526"], ["updated_at", "2023-02-21 20:48:31.027526"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "plants"[0m
+Started POST "/plants" for 127.0.0.1 at 2023-02-21 15:48:31 -0500
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPlant Create (0.1ms)[0m  [1m[32mINSERT INTO "plants" ("name", "image", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Aloe"], ["image", "./images/aloe.jpg"], ["price", 15.99], ["created_at", "2023-02-21 20:48:31.032981"], ["updated_at", "2023-02-21 20:48:31.032981"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPlant Create (0.0ms)[0m  [1m[32mINSERT INTO "plants" ("name", "image", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "ZZ Plant"], ["image", "./images/zz-plant.jpg"], ["price", 25.98], ["created_at", "2023-02-21 20:48:31.033517"], ["updated_at", "2023-02-21 20:48:31.033517"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/plants" for 127.0.0.1 at 2023-02-21 15:48:31 -0500
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPlant Create (0.2ms)[0m  [1m[32mINSERT INTO "plants" ("name", "image", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Aloe"], ["image", "./images/aloe.jpg"], ["price", 15.99], ["created_at", "2023-02-21 20:48:31.042126"], ["updated_at", "2023-02-21 20:48:31.042126"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPlant Create (0.0ms)[0m  [1m[32mINSERT INTO "plants" ("name", "image", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "ZZ Plant"], ["image", "./images/zz-plant.jpg"], ["price", 25.98], ["created_at", "2023-02-21 20:48:31.042701"], ["updated_at", "2023-02-21 20:48:31.042701"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/plants" for 127.0.0.1 at 2023-02-21 15:48:31 -0500
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPlant Create (0.2ms)[0m  [1m[32mINSERT INTO "plants" ("name", "image", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Aloe"], ["image", "./images/aloe.jpg"], ["price", 15.99], ["created_at", "2023-02-21 20:49:53.759999"], ["updated_at", "2023-02-21 20:49:53.759999"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPlant Create (0.0ms)[0m  [1m[32mINSERT INTO "plants" ("name", "image", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "ZZ Plant"], ["image", "./images/zz-plant.jpg"], ["price", 25.98], ["created_at", "2023-02-21 20:49:53.761362"], ["updated_at", "2023-02-21 20:49:53.761362"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PATCH "/plants/1" for 127.0.0.1 at 2023-02-21 15:49:53 -0500
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPlant Create (0.3ms)[0m  [1m[32mINSERT INTO "plants" ("name", "image", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Aloe"], ["image", "./images/aloe.jpg"], ["price", 15.99], ["created_at", "2023-02-21 20:49:53.768612"], ["updated_at", "2023-02-21 20:49:53.768612"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPlant Create (0.0ms)[0m  [1m[32mINSERT INTO "plants" ("name", "image", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "ZZ Plant"], ["image", "./images/zz-plant.jpg"], ["price", 25.98], ["created_at", "2023-02-21 20:49:53.769433"], ["updated_at", "2023-02-21 20:49:53.769433"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/plants" for 127.0.0.1 at 2023-02-21 15:49:53 -0500
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPlant Create (0.2ms)[0m  [1m[32mINSERT INTO "plants" ("name", "image", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Aloe"], ["image", "./images/aloe.jpg"], ["price", 15.99], ["created_at", "2023-02-21 20:49:53.775760"], ["updated_at", "2023-02-21 20:49:53.775760"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPlant Create (0.1ms)[0m  [1m[32mINSERT INTO "plants" ("name", "image", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "ZZ Plant"], ["image", "./images/zz-plant.jpg"], ["price", 25.98], ["created_at", "2023-02-21 20:49:53.776286"], ["updated_at", "2023-02-21 20:49:53.776286"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPlant Load (0.0ms)[0m  [1m[34mSELECT "plants".* FROM "plants" ORDER BY "plants"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/plants/1" for 127.0.0.1 at 2023-02-21 15:49:53 -0500
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPlant Create (0.2ms)[0m  [1m[32mINSERT INTO "plants" ("name", "image", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Aloe"], ["image", "./images/aloe.jpg"], ["price", 15.99], ["created_at", "2023-02-21 20:49:53.781487"], ["updated_at", "2023-02-21 20:49:53.781487"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPlant Create (0.0ms)[0m  [1m[32mINSERT INTO "plants" ("name", "image", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "ZZ Plant"], ["image", "./images/zz-plant.jpg"], ["price", 25.98], ["created_at", "2023-02-21 20:49:53.782137"], ["updated_at", "2023-02-21 20:49:53.782137"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPlant Load (0.0ms)[0m  [1m[34mSELECT "plants".* FROM "plants" ORDER BY "plants"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+Started GET "/plants/2" for 127.0.0.1 at 2023-02-21 15:49:53 -0500
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPlant Create (0.2ms)[0m  [1m[32mINSERT INTO "plants" ("name", "image", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Aloe"], ["image", "./images/aloe.jpg"], ["price", 15.99], ["created_at", "2023-02-21 20:49:53.787759"], ["updated_at", "2023-02-21 20:49:53.787759"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPlant Create (0.0ms)[0m  [1m[32mINSERT INTO "plants" ("name", "image", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "ZZ Plant"], ["image", "./images/zz-plant.jpg"], ["price", 25.98], ["created_at", "2023-02-21 20:49:53.788313"], ["updated_at", "2023-02-21 20:49:53.788313"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "plants"[0m
+Started POST "/plants" for 127.0.0.1 at 2023-02-21 15:49:53 -0500
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPlant Create (0.1ms)[0m  [1m[32mINSERT INTO "plants" ("name", "image", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Aloe"], ["image", "./images/aloe.jpg"], ["price", 15.99], ["created_at", "2023-02-21 20:49:53.793908"], ["updated_at", "2023-02-21 20:49:53.793908"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPlant Create (0.0ms)[0m  [1m[32mINSERT INTO "plants" ("name", "image", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "ZZ Plant"], ["image", "./images/zz-plant.jpg"], ["price", 25.98], ["created_at", "2023-02-21 20:49:53.794397"], ["updated_at", "2023-02-21 20:49:53.794397"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/plants" for 127.0.0.1 at 2023-02-21 15:49:53 -0500
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPlant Create (0.2ms)[0m  [1m[32mINSERT INTO "plants" ("name", "image", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Aloe"], ["image", "./images/aloe.jpg"], ["price", 15.99], ["created_at", "2023-02-21 20:49:53.798852"], ["updated_at", "2023-02-21 20:49:53.798852"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPlant Create (0.0ms)[0m  [1m[32mINSERT INTO "plants" ("name", "image", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "ZZ Plant"], ["image", "./images/zz-plant.jpg"], ["price", 25.98], ["created_at", "2023-02-21 20:49:53.799564"], ["updated_at", "2023-02-21 20:49:53.799564"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/plants" for 127.0.0.1 at 2023-02-21 15:49:53 -0500
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
