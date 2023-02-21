@@ -1,0 +1,425 @@
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "students"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "students" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "grade" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20210430181635)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", "2023-02-21 18:01:46.839977"], ["updated_at", "2023-02-21 18:01:46.839977"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "444af0c2769e4ad2641d50527a588e9337bccfeb"], ["created_at", "2023-02-21 18:01:46.841182"], ["updated_at", "2023-02-21 18:01:46.841182"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.3ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Dwayne"], ["last_name", "Johnson"], ["grade", 99], ["created_at", "2023-02-21 18:01:46.862550"], ["updated_at", "2023-02-21 18:01:46.862550"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.0ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Idris"], ["last_name", "Elba"], ["grade", 105], ["created_at", "2023-02-21 18:01:46.863536"], ["updated_at", "2023-02-21 18:01:46.863536"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.1ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Vanessa"], ["last_name", "Kirby"], ["grade", 85], ["created_at", "2023-02-21 18:01:46.863915"], ["updated_at", "2023-02-21 18:01:46.863915"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.0ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Jason"], ["last_name", "Statham"], ["grade", 70], ["created_at", "2023-02-21 18:01:46.864392"], ["updated_at", "2023-02-21 18:01:46.864392"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/students" for 127.0.0.1 at 2023-02-21 13:01:46 -0500
+Processing by StudentsController#index as HTML
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 4773)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.2ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Dwayne"], ["last_name", "Johnson"], ["grade", 99], ["created_at", "2023-02-21 18:01:46.879777"], ["updated_at", "2023-02-21 18:01:46.879777"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.0ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Idris"], ["last_name", "Elba"], ["grade", 105], ["created_at", "2023-02-21 18:01:46.880440"], ["updated_at", "2023-02-21 18:01:46.880440"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.0ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Vanessa"], ["last_name", "Kirby"], ["grade", 85], ["created_at", "2023-02-21 18:01:46.880736"], ["updated_at", "2023-02-21 18:01:46.880736"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.0ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Jason"], ["last_name", "Statham"], ["grade", 70], ["created_at", "2023-02-21 18:01:46.881026"], ["updated_at", "2023-02-21 18:01:46.881026"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/students/grades" for 127.0.0.1 at 2023-02-21 13:01:46 -0500
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.3ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Dwayne"], ["last_name", "Johnson"], ["grade", 99], ["created_at", "2023-02-21 18:03:02.942175"], ["updated_at", "2023-02-21 18:03:02.942175"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.0ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Idris"], ["last_name", "Elba"], ["grade", 105], ["created_at", "2023-02-21 18:03:02.943286"], ["updated_at", "2023-02-21 18:03:02.943286"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.0ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Vanessa"], ["last_name", "Kirby"], ["grade", 85], ["created_at", "2023-02-21 18:03:02.943672"], ["updated_at", "2023-02-21 18:03:02.943672"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.0ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Jason"], ["last_name", "Statham"], ["grade", 70], ["created_at", "2023-02-21 18:03:02.944027"], ["updated_at", "2023-02-21 18:03:02.944027"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/students" for 127.0.0.1 at 2023-02-21 13:03:02 -0500
+Processing by StudentsController#index as HTML
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms | Allocations: 4773)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.2ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Dwayne"], ["last_name", "Johnson"], ["grade", 99], ["created_at", "2023-02-21 18:03:02.961414"], ["updated_at", "2023-02-21 18:03:02.961414"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.1ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Idris"], ["last_name", "Elba"], ["grade", 105], ["created_at", "2023-02-21 18:03:02.962156"], ["updated_at", "2023-02-21 18:03:02.962156"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.0ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Vanessa"], ["last_name", "Kirby"], ["grade", 85], ["created_at", "2023-02-21 18:03:02.962495"], ["updated_at", "2023-02-21 18:03:02.962495"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.0ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Jason"], ["last_name", "Statham"], ["grade", 70], ["created_at", "2023-02-21 18:03:02.962792"], ["updated_at", "2023-02-21 18:03:02.962792"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/students/grades" for 127.0.0.1 at 2023-02-21 13:03:02 -0500
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.2ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Dwayne"], ["last_name", "Johnson"], ["grade", 99], ["created_at", "2023-02-21 18:04:31.741386"], ["updated_at", "2023-02-21 18:04:31.741386"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.0ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Idris"], ["last_name", "Elba"], ["grade", 105], ["created_at", "2023-02-21 18:04:31.742103"], ["updated_at", "2023-02-21 18:04:31.742103"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.0ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Vanessa"], ["last_name", "Kirby"], ["grade", 85], ["created_at", "2023-02-21 18:04:31.742402"], ["updated_at", "2023-02-21 18:04:31.742402"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.0ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Jason"], ["last_name", "Statham"], ["grade", 70], ["created_at", "2023-02-21 18:04:31.742682"], ["updated_at", "2023-02-21 18:04:31.742682"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/students" for 127.0.0.1 at 2023-02-21 13:04:31 -0500
+Processing by StudentsController#index as HTML
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 4773)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.2ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Dwayne"], ["last_name", "Johnson"], ["grade", 99], ["created_at", "2023-02-21 18:04:31.753254"], ["updated_at", "2023-02-21 18:04:31.753254"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.0ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Idris"], ["last_name", "Elba"], ["grade", 105], ["created_at", "2023-02-21 18:04:31.753884"], ["updated_at", "2023-02-21 18:04:31.753884"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.0ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Vanessa"], ["last_name", "Kirby"], ["grade", 85], ["created_at", "2023-02-21 18:04:31.754158"], ["updated_at", "2023-02-21 18:04:31.754158"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.0ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Jason"], ["last_name", "Statham"], ["grade", 70], ["created_at", "2023-02-21 18:04:31.754428"], ["updated_at", "2023-02-21 18:04:31.754428"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/students/grades" for 127.0.0.1 at 2023-02-21 13:04:31 -0500
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.3ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Dwayne"], ["last_name", "Johnson"], ["grade", 99], ["created_at", "2023-02-21 18:05:03.490319"], ["updated_at", "2023-02-21 18:05:03.490319"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.0ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Idris"], ["last_name", "Elba"], ["grade", 105], ["created_at", "2023-02-21 18:05:03.491197"], ["updated_at", "2023-02-21 18:05:03.491197"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.0ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Vanessa"], ["last_name", "Kirby"], ["grade", 85], ["created_at", "2023-02-21 18:05:03.491553"], ["updated_at", "2023-02-21 18:05:03.491553"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.0ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Jason"], ["last_name", "Statham"], ["grade", 70], ["created_at", "2023-02-21 18:05:03.491938"], ["updated_at", "2023-02-21 18:05:03.491938"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/students" for 127.0.0.1 at 2023-02-21 13:05:03 -0500
+Processing by StudentsController#index as HTML
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+Completed 200 OK in 8ms (Views: 0.6ms | ActiveRecord: 0.1ms | Allocations: 3850)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.2ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Dwayne"], ["last_name", "Johnson"], ["grade", 99], ["created_at", "2023-02-21 18:05:03.507174"], ["updated_at", "2023-02-21 18:05:03.507174"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.0ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Idris"], ["last_name", "Elba"], ["grade", 105], ["created_at", "2023-02-21 18:05:03.507768"], ["updated_at", "2023-02-21 18:05:03.507768"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.0ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Vanessa"], ["last_name", "Kirby"], ["grade", 85], ["created_at", "2023-02-21 18:05:03.508045"], ["updated_at", "2023-02-21 18:05:03.508045"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.0ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Jason"], ["last_name", "Statham"], ["grade", 70], ["created_at", "2023-02-21 18:05:03.508304"], ["updated_at", "2023-02-21 18:05:03.508304"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/students/grades" for 127.0.0.1 at 2023-02-21 13:05:03 -0500
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.3ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Dwayne"], ["last_name", "Johnson"], ["grade", 99], ["created_at", "2023-02-21 18:05:51.856900"], ["updated_at", "2023-02-21 18:05:51.856900"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.0ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Idris"], ["last_name", "Elba"], ["grade", 105], ["created_at", "2023-02-21 18:05:51.858067"], ["updated_at", "2023-02-21 18:05:51.858067"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.0ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Vanessa"], ["last_name", "Kirby"], ["grade", 85], ["created_at", "2023-02-21 18:05:51.858475"], ["updated_at", "2023-02-21 18:05:51.858475"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.0ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Jason"], ["last_name", "Statham"], ["grade", 70], ["created_at", "2023-02-21 18:05:51.858830"], ["updated_at", "2023-02-21 18:05:51.858830"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/students" for 127.0.0.1 at 2023-02-21 13:05:51 -0500
+Processing by StudentsController#index as HTML
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+Completed 200 OK in 9ms (Views: 0.7ms | ActiveRecord: 0.1ms | Allocations: 3850)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.2ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Dwayne"], ["last_name", "Johnson"], ["grade", 99], ["created_at", "2023-02-21 18:05:51.876243"], ["updated_at", "2023-02-21 18:05:51.876243"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.0ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Idris"], ["last_name", "Elba"], ["grade", 105], ["created_at", "2023-02-21 18:05:51.876915"], ["updated_at", "2023-02-21 18:05:51.876915"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.0ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Vanessa"], ["last_name", "Kirby"], ["grade", 85], ["created_at", "2023-02-21 18:05:51.877201"], ["updated_at", "2023-02-21 18:05:51.877201"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.0ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Jason"], ["last_name", "Statham"], ["grade", 70], ["created_at", "2023-02-21 18:05:51.877471"], ["updated_at", "2023-02-21 18:05:51.877471"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/students/grades" for 127.0.0.1 at 2023-02-21 13:05:51 -0500
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.3ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Dwayne"], ["last_name", "Johnson"], ["grade", 99], ["created_at", "2023-02-21 18:06:32.800431"], ["updated_at", "2023-02-21 18:06:32.800431"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.0ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Idris"], ["last_name", "Elba"], ["grade", 105], ["created_at", "2023-02-21 18:06:32.801484"], ["updated_at", "2023-02-21 18:06:32.801484"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.0ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Vanessa"], ["last_name", "Kirby"], ["grade", 85], ["created_at", "2023-02-21 18:06:32.801872"], ["updated_at", "2023-02-21 18:06:32.801872"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.0ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Jason"], ["last_name", "Statham"], ["grade", 70], ["created_at", "2023-02-21 18:06:32.802251"], ["updated_at", "2023-02-21 18:06:32.802251"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/students" for 127.0.0.1 at 2023-02-21 13:06:32 -0500
+Processing by StudentsController#index as HTML
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 3850)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.2ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Dwayne"], ["last_name", "Johnson"], ["grade", 99], ["created_at", "2023-02-21 18:06:32.813357"], ["updated_at", "2023-02-21 18:06:32.813357"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.0ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Idris"], ["last_name", "Elba"], ["grade", 105], ["created_at", "2023-02-21 18:06:32.814132"], ["updated_at", "2023-02-21 18:06:32.814132"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.0ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Vanessa"], ["last_name", "Kirby"], ["grade", 85], ["created_at", "2023-02-21 18:06:32.814435"], ["updated_at", "2023-02-21 18:06:32.814435"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.0ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Jason"], ["last_name", "Statham"], ["grade", 70], ["created_at", "2023-02-21 18:06:32.814724"], ["updated_at", "2023-02-21 18:06:32.814724"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/students/grades" for 127.0.0.1 at 2023-02-21 13:06:32 -0500
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.4ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Dwayne"], ["last_name", "Johnson"], ["grade", 99], ["created_at", "2023-02-21 18:06:51.480358"], ["updated_at", "2023-02-21 18:06:51.480358"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.0ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Idris"], ["last_name", "Elba"], ["grade", 105], ["created_at", "2023-02-21 18:06:51.481554"], ["updated_at", "2023-02-21 18:06:51.481554"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.0ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Vanessa"], ["last_name", "Kirby"], ["grade", 85], ["created_at", "2023-02-21 18:06:51.482157"], ["updated_at", "2023-02-21 18:06:51.482157"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.0ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Jason"], ["last_name", "Statham"], ["grade", 70], ["created_at", "2023-02-21 18:06:51.482528"], ["updated_at", "2023-02-21 18:06:51.482528"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/students" for 127.0.0.1 at 2023-02-21 13:06:51 -0500
+Processing by StudentsController#index as HTML
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+Completed 200 OK in 6ms (Views: 0.6ms | ActiveRecord: 0.1ms | Allocations: 3850)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.3ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Dwayne"], ["last_name", "Johnson"], ["grade", 99], ["created_at", "2023-02-21 18:06:51.496279"], ["updated_at", "2023-02-21 18:06:51.496279"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.0ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Idris"], ["last_name", "Elba"], ["grade", 105], ["created_at", "2023-02-21 18:06:51.497205"], ["updated_at", "2023-02-21 18:06:51.497205"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.0ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Vanessa"], ["last_name", "Kirby"], ["grade", 85], ["created_at", "2023-02-21 18:06:51.497588"], ["updated_at", "2023-02-21 18:06:51.497588"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.0ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Jason"], ["last_name", "Statham"], ["grade", 70], ["created_at", "2023-02-21 18:06:51.497908"], ["updated_at", "2023-02-21 18:06:51.497908"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/students/grades" for 127.0.0.1 at 2023-02-21 13:06:51 -0500
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.3ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Dwayne"], ["last_name", "Johnson"], ["grade", 99], ["created_at", "2023-02-21 18:07:01.332225"], ["updated_at", "2023-02-21 18:07:01.332225"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.0ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Idris"], ["last_name", "Elba"], ["grade", 105], ["created_at", "2023-02-21 18:07:01.333299"], ["updated_at", "2023-02-21 18:07:01.333299"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.0ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Vanessa"], ["last_name", "Kirby"], ["grade", 85], ["created_at", "2023-02-21 18:07:01.333649"], ["updated_at", "2023-02-21 18:07:01.333649"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.1ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Jason"], ["last_name", "Statham"], ["grade", 70], ["created_at", "2023-02-21 18:07:01.334003"], ["updated_at", "2023-02-21 18:07:01.334003"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/students" for 127.0.0.1 at 2023-02-21 13:07:01 -0500
+Processing by StudentsController#index as HTML
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+Completed 200 OK in 6ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 3850)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.2ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Dwayne"], ["last_name", "Johnson"], ["grade", 99], ["created_at", "2023-02-21 18:07:01.346713"], ["updated_at", "2023-02-21 18:07:01.346713"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.0ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Idris"], ["last_name", "Elba"], ["grade", 105], ["created_at", "2023-02-21 18:07:01.347411"], ["updated_at", "2023-02-21 18:07:01.347411"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.0ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Vanessa"], ["last_name", "Kirby"], ["grade", 85], ["created_at", "2023-02-21 18:07:01.347715"], ["updated_at", "2023-02-21 18:07:01.347715"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.0ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Jason"], ["last_name", "Statham"], ["grade", 70], ["created_at", "2023-02-21 18:07:01.347991"], ["updated_at", "2023-02-21 18:07:01.347991"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/students/grades" for 127.0.0.1 at 2023-02-21 13:07:01 -0500
+Processing by StudentsController#grades as HTML
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" ORDER BY "students"."grade" DESC[0m
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.1ms | Allocations: 813)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.3ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Dwayne"], ["last_name", "Johnson"], ["grade", 99], ["created_at", "2023-02-21 18:07:12.637595"], ["updated_at", "2023-02-21 18:07:12.637595"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.0ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Idris"], ["last_name", "Elba"], ["grade", 105], ["created_at", "2023-02-21 18:07:12.638851"], ["updated_at", "2023-02-21 18:07:12.638851"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.0ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Vanessa"], ["last_name", "Kirby"], ["grade", 85], ["created_at", "2023-02-21 18:07:12.639286"], ["updated_at", "2023-02-21 18:07:12.639286"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.0ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Jason"], ["last_name", "Statham"], ["grade", 70], ["created_at", "2023-02-21 18:07:12.639616"], ["updated_at", "2023-02-21 18:07:12.639616"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/students" for 127.0.0.1 at 2023-02-21 13:07:12 -0500
+Processing by StudentsController#index as HTML
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+Completed 200 OK in 8ms (Views: 1.0ms | ActiveRecord: 0.1ms | Allocations: 3850)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.2ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Dwayne"], ["last_name", "Johnson"], ["grade", 99], ["created_at", "2023-02-21 18:07:12.653942"], ["updated_at", "2023-02-21 18:07:12.653942"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.0ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Idris"], ["last_name", "Elba"], ["grade", 105], ["created_at", "2023-02-21 18:07:12.654583"], ["updated_at", "2023-02-21 18:07:12.654583"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.0ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Vanessa"], ["last_name", "Kirby"], ["grade", 85], ["created_at", "2023-02-21 18:07:12.654867"], ["updated_at", "2023-02-21 18:07:12.654867"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.0ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "grade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Jason"], ["last_name", "Statham"], ["grade", 70], ["created_at", "2023-02-21 18:07:12.655121"], ["updated_at", "2023-02-21 18:07:12.655121"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/students/grades" for 127.0.0.1 at 2023-02-21 13:07:12 -0500
+Processing by StudentsController#grades as HTML
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" ORDER BY "students"."grade" DESC[0m
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 813)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m

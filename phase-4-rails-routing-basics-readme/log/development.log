@@ -1,0 +1,44 @@
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCheeses (20210430191324)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "cheeses" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "price" integer, "is_best_seller" boolean, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210430191324"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-02-21 17:53:26.168983"], ["updated_at", "2023-02-21 17:53:26.168983"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCheese Create (0.2ms)[0m  [1m[32mINSERT INTO "cheeses" ("name", "price", "is_best_seller", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Cheddar"], ["price", 3], ["is_best_seller", 1], ["created_at", "2023-02-21 17:53:26.182694"], ["updated_at", "2023-02-21 17:53:26.182694"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCheese Create (0.1ms)[0m  [1m[32mINSERT INTO "cheeses" ("name", "price", "is_best_seller", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Pepper Jack"], ["price", 4], ["is_best_seller", 1], ["created_at", "2023-02-21 17:53:26.184057"], ["updated_at", "2023-02-21 17:53:26.184057"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCheese Create (0.1ms)[0m  [1m[32mINSERT INTO "cheeses" ("name", "price", "is_best_seller", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Limburger"], ["price", 8], ["is_best_seller", 0], ["created_at", "2023-02-21 17:53:26.185156"], ["updated_at", "2023-02-21 17:53:26.185156"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mCheese Load (0.1ms)[0m  [1m[34mSELECT "cheeses".* FROM "cheeses" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/cheeses" for ::1 at 2023-02-21 12:54:47 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CheesesController#index as HTML
+  [1m[36mCheese Load (0.2ms)[0m  [1m[34mSELECT "cheeses".* FROM "cheeses" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/cheeses_controller.rb:4:in `index'
+  [1m[36mCheese Load (0.3ms)[0m  [1m[34mSELECT "cheeses".* FROM "cheeses"[0m
+  ↳ (byebug):1:in `index'
+Completed 200 OK in 28376ms (Views: 15.3ms | ActiveRecord: 0.9ms | Allocations: 190279)
+
+
+Started GET "/favicon.ico" for ::1 at 2023-02-21 12:55:16 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
