@@ -1,0 +1,681 @@
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateToys (20210509095050)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "toys" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "image" varchar, "likes" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210509095050"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-02-23 15:24:41.420988"], ["updated_at", "2023-02-23 15:24:41.420988"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mToy Create (0.2ms)[0m  [1m[32mINSERT INTO "toys" ("name", "image", "likes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Woody"], ["image", "http://www.pngmart.com/files/3/Toy-Story-Woody-PNG-Photos.png"], ["likes", 8], ["created_at", "2023-02-23 15:24:41.434163"], ["updated_at", "2023-02-23 15:24:41.434163"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mToy Create (0.2ms)[0m  [1m[32mINSERT INTO "toys" ("name", "image", "likes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Buzz Lightyear"], ["image", "http://www.pngmart.com/files/6/Buzz-Lightyear-PNG-Transparent-Picture.png"], ["likes", 14], ["created_at", "2023-02-23 15:24:41.435560"], ["updated_at", "2023-02-23 15:24:41.435560"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mToy Create (0.2ms)[0m  [1m[32mINSERT INTO "toys" ("name", "image", "likes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Mr. Potato Head"], ["image", "https://vignette.wikia.nocookie.net/universe-of-smash-bros-lawl/images/d/d8/Mr-potato-head-toy-story.gif/revision/latest?cb=20151129131217"], ["likes", 3], ["created_at", "2023-02-23 15:24:41.437038"], ["updated_at", "2023-02-23 15:24:41.437038"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mToy Create (0.2ms)[0m  [1m[32mINSERT INTO "toys" ("name", "image", "likes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Slinky Dog"], ["image", "https://www.freeiconspng.com/uploads/slinky-png-transparent-1.png"], ["likes", 4], ["created_at", "2023-02-23 15:24:41.438427"], ["updated_at", "2023-02-23 15:24:41.438427"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mToy Create (0.1ms)[0m  [1m[32mINSERT INTO "toys" ("name", "image", "likes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Rex"], ["image", "http://umich.edu/~chemh215/W11HTML/SSG5/ssg5.2/FRex.png"], ["likes", 1], ["created_at", "2023-02-23 15:24:41.439901"], ["updated_at", "2023-02-23 15:24:41.439901"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mToy Create (0.2ms)[0m  [1m[32mINSERT INTO "toys" ("name", "image", "likes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Bo Peep"], ["image", "http://4.bp.blogspot.com/_OZHbJ8c71OM/Sog43CMFX2I/AAAAAAAADEs/0AKX0XslD4g/s400/bo.png"], ["likes", 2], ["created_at", "2023-02-23 15:24:41.441255"], ["updated_at", "2023-02-23 15:24:41.441255"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mToy Create (0.2ms)[0m  [1m[32mINSERT INTO "toys" ("name", "image", "likes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Hamm"], ["image", "https://cdn140.picsart.com/244090226021212.png?r1024x1024"], ["likes", 0], ["created_at", "2023-02-23 15:24:41.442687"], ["updated_at", "2023-02-23 15:24:41.442687"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mToy Create (0.1ms)[0m  [1m[32mINSERT INTO "toys" ("name", "image", "likes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Little Green Men"], ["image", "http://www.pngmart.com/files/3/Toy-Story-Alien-PNG-File.png"], ["likes", -2], ["created_at", "2023-02-23 15:24:41.444074"], ["updated_at", "2023-02-23 15:24:41.444074"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/toys" for 127.0.0.1 at 2023-02-23 10:26:01 -0500
+Started GET "/" for ::1 at 2023-02-23 10:26:01 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ToysController#index as */*
+Processing by Rails::WelcomeController#index as HTML
+  [1m[36mToy Load (0.1ms)[0m  [1m[34mSELECT "toys".* FROM "toys"[0m
+  ↳ app/controllers/toys_controller.rb:6:in `index'
+Completed 200 OK in 10ms (Views: 4.5ms | ActiveRecord: 0.4ms | Allocations: 8411)
+
+
+  Rendering /Users/bstignzales/.rvm/gems/ruby-2.7.4/gems/railties-6.1.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/bstignzales/.rvm/gems/ruby-2.7.4/gems/railties-6.1.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 4.0ms | Allocations: 343)
+Completed 200 OK in 13ms (Views: 5.8ms | ActiveRecord: 0.0ms | Allocations: 7263)
+
+
+Started PATCH "/toys/4" for 127.0.0.1 at 2023-02-23 10:28:02 -0500
+Processing by ToysController#update as */*
+  Parameters: {"likes"=>5, "id"=>"4"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/toys_controller.rb:15:in `update'
+  [1m[36mToy Load (0.1ms)[0m  [1m[34mSELECT "toys".* FROM "toys" WHERE "toys"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/toys_controller.rb:15:in `update'
+[31mUnpermitted parameter: :id[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+  [1m[36mToy Update (0.3ms)[0m  [1m[33mUPDATE "toys" SET "likes" = ?, "updated_at" = ? WHERE "toys"."id" = ?[0m  [["likes", 5], ["updated_at", "2023-02-23 15:28:02.340366"], ["id", 4]]
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+Completed 204 No Content in 10ms (ActiveRecord: 1.4ms | Allocations: 6254)
+
+
+Started DELETE "/toys/4" for 127.0.0.1 at 2023-02-23 10:28:11 -0500
+  
+ActionController::RoutingError (No route matches [DELETE] "/toys/4"):
+  
+Started DELETE "/toys/4" for 127.0.0.1 at 2023-02-23 10:28:11 -0500
+  
+ActionController::RoutingError (No route matches [DELETE] "/toys/4"):
+  
+Started DELETE "/toys/4" for 127.0.0.1 at 2023-02-23 10:28:12 -0500
+  
+ActionController::RoutingError (No route matches [DELETE] "/toys/4"):
+  
+Started GET "/toys" for 127.0.0.1 at 2023-02-23 10:28:14 -0500
+Processing by ToysController#index as */*
+  [1m[36mToy Load (0.3ms)[0m  [1m[34mSELECT "toys".* FROM "toys"[0m
+  ↳ app/controllers/toys_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.3ms | Allocations: 1546)
+
+
+Started DELETE "/toys/4" for 127.0.0.1 at 2023-02-23 10:28:16 -0500
+  
+ActionController::RoutingError (No route matches [DELETE] "/toys/4"):
+  
+Started PATCH "/toys/3" for 127.0.0.1 at 2023-02-23 10:29:19 -0500
+Processing by ToysController#update as */*
+  Parameters: {"likes"=>4, "id"=>"3"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/toys_controller.rb:15:in `update'
+  [1m[36mToy Load (0.1ms)[0m  [1m[34mSELECT "toys".* FROM "toys" WHERE "toys"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/toys_controller.rb:15:in `update'
+[31mUnpermitted parameter: :id[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+  [1m[36mToy Update (0.3ms)[0m  [1m[33mUPDATE "toys" SET "likes" = ?, "updated_at" = ? WHERE "toys"."id" = ?[0m  [["likes", 4], ["updated_at", "2023-02-23 15:29:19.664406"], ["id", 3]]
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 1.4ms | Allocations: 5768)
+
+
+Started PATCH "/toys/3" for 127.0.0.1 at 2023-02-23 10:29:20 -0500
+Processing by ToysController#update as */*
+  Parameters: {"likes"=>5, "id"=>"3"}
+  [1m[36mToy Load (0.1ms)[0m  [1m[34mSELECT "toys".* FROM "toys" WHERE "toys"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/toys_controller.rb:15:in `update'
+[31mUnpermitted parameter: :id[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+  [1m[36mToy Update (0.2ms)[0m  [1m[33mUPDATE "toys" SET "likes" = ?, "updated_at" = ? WHERE "toys"."id" = ?[0m  [["likes", 5], ["updated_at", "2023-02-23 15:29:20.531221"], ["id", 3]]
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.8ms | Allocations: 2181)
+
+
+Started PATCH "/toys/3" for 127.0.0.1 at 2023-02-23 10:29:20 -0500
+Processing by ToysController#update as */*
+  Parameters: {"likes"=>6, "id"=>"3"}
+  [1m[36mToy Load (0.1ms)[0m  [1m[34mSELECT "toys".* FROM "toys" WHERE "toys"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/toys_controller.rb:15:in `update'
+[31mUnpermitted parameter: :id[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+  [1m[36mToy Update (0.4ms)[0m  [1m[33mUPDATE "toys" SET "likes" = ?, "updated_at" = ? WHERE "toys"."id" = ?[0m  [["likes", 6], ["updated_at", "2023-02-23 15:29:20.898672"], ["id", 3]]
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 1.1ms | Allocations: 2202)
+
+
+Started PATCH "/toys/3" for 127.0.0.1 at 2023-02-23 10:29:21 -0500
+Processing by ToysController#update as */*
+  Parameters: {"likes"=>7, "id"=>"3"}
+  [1m[36mToy Load (0.1ms)[0m  [1m[34mSELECT "toys".* FROM "toys" WHERE "toys"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/toys_controller.rb:15:in `update'
+[31mUnpermitted parameter: :id[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+  [1m[36mToy Update (0.3ms)[0m  [1m[33mUPDATE "toys" SET "likes" = ?, "updated_at" = ? WHERE "toys"."id" = ?[0m  [["likes", 7], ["updated_at", "2023-02-23 15:29:21.047851"], ["id", 3]]
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 1.0ms | Allocations: 2182)
+
+
+Started PATCH "/toys/4" for 127.0.0.1 at 2023-02-23 10:29:21 -0500
+Processing by ToysController#update as */*
+  Parameters: {"likes"=>6, "id"=>"4"}
+  [1m[36mToy Load (0.1ms)[0m  [1m[34mSELECT "toys".* FROM "toys" WHERE "toys"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/toys_controller.rb:15:in `update'
+[31mUnpermitted parameter: :id[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+  [1m[36mToy Update (0.4ms)[0m  [1m[33mUPDATE "toys" SET "likes" = ?, "updated_at" = ? WHERE "toys"."id" = ?[0m  [["likes", 6], ["updated_at", "2023-02-23 15:29:21.648464"], ["id", 4]]
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 1.0ms | Allocations: 2178)
+
+
+Started PATCH "/toys/4" for 127.0.0.1 at 2023-02-23 10:29:21 -0500
+Processing by ToysController#update as */*
+  Parameters: {"likes"=>7, "id"=>"4"}
+  [1m[36mToy Load (0.1ms)[0m  [1m[34mSELECT "toys".* FROM "toys" WHERE "toys"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/toys_controller.rb:15:in `update'
+[31mUnpermitted parameter: :id[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+  [1m[36mToy Update (0.3ms)[0m  [1m[33mUPDATE "toys" SET "likes" = ?, "updated_at" = ? WHERE "toys"."id" = ?[0m  [["likes", 7], ["updated_at", "2023-02-23 15:29:21.801151"], ["id", 4]]
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 0.9ms | Allocations: 2179)
+
+
+Started PATCH "/toys/4" for 127.0.0.1 at 2023-02-23 10:29:21 -0500
+Processing by ToysController#update as */*
+  Parameters: {"likes"=>8, "id"=>"4"}
+  [1m[36mToy Load (0.1ms)[0m  [1m[34mSELECT "toys".* FROM "toys" WHERE "toys"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/toys_controller.rb:15:in `update'
+[31mUnpermitted parameter: :id[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+  [1m[36mToy Update (0.3ms)[0m  [1m[33mUPDATE "toys" SET "likes" = ?, "updated_at" = ? WHERE "toys"."id" = ?[0m  [["likes", 8], ["updated_at", "2023-02-23 15:29:21.946568"], ["id", 4]]
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.8ms | Allocations: 2178)
+
+
+Started DELETE "/toys/4" for 127.0.0.1 at 2023-02-23 10:29:22 -0500
+  
+ActionController::RoutingError (No route matches [DELETE] "/toys/4"):
+  
+Started DELETE "/toys/4" for 127.0.0.1 at 2023-02-23 10:29:23 -0500
+  
+ActionController::RoutingError (No route matches [DELETE] "/toys/4"):
+  
+Started DELETE "/toys/4" for 127.0.0.1 at 2023-02-23 10:29:23 -0500
+  
+ActionController::RoutingError (No route matches [DELETE] "/toys/4"):
+  
+Started DELETE "/toys/4" for 127.0.0.1 at 2023-02-23 10:29:29 -0500
+  
+ActionController::RoutingError (No route matches [DELETE] "/toys/4"):
+  
+Started POST "/toys" for 127.0.0.1 at 2023-02-23 10:30:00 -0500
+Processing by ToysController#create as */*
+  Parameters: {"name"=>"FlatCoin", "image"=>"https://images.search.yahoo.com/search/images?p=ramen+image&fr=mcafee&type=E211US885G0&imgurl=http%3A%2F%2Fjapanalytic.com%2Fwp-content%2Fuploads%2F2016%2F07%2Framen-2.jpg#id=1&iurl=http%3A%2F%2Fjapanalytic.com%2Fwp-content%2Fuploads%2F2016%2F07%2Framen-2.jpg&action=click", "likes"=>0}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/toys_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/toys_controller.rb:10:in `create'
+  [1m[36mToy Create (0.3ms)[0m  [1m[32mINSERT INTO "toys" ("name", "image", "likes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "FlatCoin"], ["image", "https://images.search.yahoo.com/search/images?p=ramen+image&fr=mcafee&type=E211US885G0&imgurl=http%3A%2F%2Fjapanalytic.com%2Fwp-content%2Fuploads%2F2016%2F07%2Framen-2.jpg#id=1&iurl=http%3A%2F%2Fjapanalytic.com%2Fwp-content%2Fuploads%2F2016%2F07%2Framen-2.jpg&action=click"], ["likes", 0], ["created_at", "2023-02-23 15:30:00.440704"], ["updated_at", "2023-02-23 15:30:00.440704"]]
+  ↳ app/controllers/toys_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/toys_controller.rb:10:in `create'
+Completed 201 Created in 9ms (Views: 0.3ms | ActiveRecord: 1.6ms | Allocations: 5256)
+
+
+Started PATCH "/toys/9" for 127.0.0.1 at 2023-02-23 10:30:03 -0500
+Processing by ToysController#update as */*
+  Parameters: {"likes"=>1, "id"=>"9"}
+  [1m[36mToy Load (0.2ms)[0m  [1m[34mSELECT "toys".* FROM "toys" WHERE "toys"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/toys_controller.rb:15:in `update'
+[31mUnpermitted parameter: :id[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+  [1m[36mToy Update (0.4ms)[0m  [1m[33mUPDATE "toys" SET "likes" = ?, "updated_at" = ? WHERE "toys"."id" = ?[0m  [["likes", 1], ["updated_at", "2023-02-23 15:30:03.583609"], ["id", 9]]
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 1.4ms | Allocations: 2310)
+
+
+Started PATCH "/toys/9" for 127.0.0.1 at 2023-02-23 10:30:03 -0500
+Processing by ToysController#update as */*
+  Parameters: {"likes"=>2, "id"=>"9"}
+  [1m[36mToy Load (0.1ms)[0m  [1m[34mSELECT "toys".* FROM "toys" WHERE "toys"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/toys_controller.rb:15:in `update'
+[31mUnpermitted parameter: :id[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+  [1m[36mToy Update (0.3ms)[0m  [1m[33mUPDATE "toys" SET "likes" = ?, "updated_at" = ? WHERE "toys"."id" = ?[0m  [["likes", 2], ["updated_at", "2023-02-23 15:30:03.999837"], ["id", 9]]
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 1.0ms | Allocations: 2188)
+
+
+Started PATCH "/toys/9" for 127.0.0.1 at 2023-02-23 10:30:04 -0500
+Processing by ToysController#update as */*
+  Parameters: {"likes"=>3, "id"=>"9"}
+  [1m[36mToy Load (0.2ms)[0m  [1m[34mSELECT "toys".* FROM "toys" WHERE "toys"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/toys_controller.rb:15:in `update'
+[31mUnpermitted parameter: :id[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+  [1m[36mToy Update (0.4ms)[0m  [1m[33mUPDATE "toys" SET "likes" = ?, "updated_at" = ? WHERE "toys"."id" = ?[0m  [["likes", 3], ["updated_at", "2023-02-23 15:30:04.183368"], ["id", 9]]
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 1.1ms | Allocations: 2187)
+
+
+Started PATCH "/toys/9" for 127.0.0.1 at 2023-02-23 10:30:04 -0500
+Processing by ToysController#update as */*
+  Parameters: {"likes"=>4, "id"=>"9"}
+  [1m[36mToy Load (0.1ms)[0m  [1m[34mSELECT "toys".* FROM "toys" WHERE "toys"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/toys_controller.rb:15:in `update'
+[31mUnpermitted parameter: :id[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+  [1m[36mToy Update (0.4ms)[0m  [1m[33mUPDATE "toys" SET "likes" = ?, "updated_at" = ? WHERE "toys"."id" = ?[0m  [["likes", 4], ["updated_at", "2023-02-23 15:30:04.331806"], ["id", 9]]
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 1.1ms | Allocations: 2187)
+
+
+Started DELETE "/toys/9" for 127.0.0.1 at 2023-02-23 10:30:19 -0500
+  
+ActionController::RoutingError (No route matches [DELETE] "/toys/9"):
+  
+Started DELETE "/toys/9" for 127.0.0.1 at 2023-02-23 10:30:19 -0500
+  
+ActionController::RoutingError (No route matches [DELETE] "/toys/9"):
+  
+Started DELETE "/toys/8" for 127.0.0.1 at 2023-02-23 10:30:20 -0500
+  
+ActionController::RoutingError (No route matches [DELETE] "/toys/8"):
+  
+Started PATCH "/toys/7" for 127.0.0.1 at 2023-02-23 10:31:00 -0500
+Processing by ToysController#update as */*
+  Parameters: {"likes"=>1, "id"=>"7"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/toys_controller.rb:29:in `find_toy'
+  [1m[36mToy Load (0.1ms)[0m  [1m[34mSELECT "toys".* FROM "toys" WHERE "toys"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/toys_controller.rb:29:in `find_toy'
+[31mUnpermitted parameter: :id[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+  [1m[36mToy Update (0.3ms)[0m  [1m[33mUPDATE "toys" SET "likes" = ?, "updated_at" = ? WHERE "toys"."id" = ?[0m  [["likes", 1], ["updated_at", "2023-02-23 15:31:00.576771"], ["id", 7]]
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 1.4ms | Allocations: 5763)
+
+
+Started PATCH "/toys/7" for 127.0.0.1 at 2023-02-23 10:31:00 -0500
+Processing by ToysController#update as */*
+  Parameters: {"likes"=>2, "id"=>"7"}
+  [1m[36mToy Load (0.1ms)[0m  [1m[34mSELECT "toys".* FROM "toys" WHERE "toys"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/toys_controller.rb:29:in `find_toy'
+[31mUnpermitted parameter: :id[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+  [1m[36mToy Update (0.5ms)[0m  [1m[33mUPDATE "toys" SET "likes" = ?, "updated_at" = ? WHERE "toys"."id" = ?[0m  [["likes", 2], ["updated_at", "2023-02-23 15:31:00.970070"], ["id", 7]]
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 1.4ms | Allocations: 2179)
+
+
+Started PATCH "/toys/7" for 127.0.0.1 at 2023-02-23 10:31:01 -0500
+Processing by ToysController#update as */*
+  Parameters: {"likes"=>3, "id"=>"7"}
+  [1m[36mToy Load (0.1ms)[0m  [1m[34mSELECT "toys".* FROM "toys" WHERE "toys"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/toys_controller.rb:29:in `find_toy'
+[31mUnpermitted parameter: :id[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+  [1m[36mToy Update (0.4ms)[0m  [1m[33mUPDATE "toys" SET "likes" = ?, "updated_at" = ? WHERE "toys"."id" = ?[0m  [["likes", 3], ["updated_at", "2023-02-23 15:31:01.114543"], ["id", 7]]
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 1.2ms | Allocations: 2179)
+
+
+Started PATCH "/toys/7" for 127.0.0.1 at 2023-02-23 10:31:01 -0500
+Processing by ToysController#update as */*
+  Parameters: {"likes"=>4, "id"=>"7"}
+  [1m[36mToy Load (0.1ms)[0m  [1m[34mSELECT "toys".* FROM "toys" WHERE "toys"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/toys_controller.rb:29:in `find_toy'
+[31mUnpermitted parameter: :id[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+  [1m[36mToy Update (0.3ms)[0m  [1m[33mUPDATE "toys" SET "likes" = ?, "updated_at" = ? WHERE "toys"."id" = ?[0m  [["likes", 4], ["updated_at", "2023-02-23 15:31:01.265743"], ["id", 7]]
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 1.1ms | Allocations: 2179)
+
+
+Started PATCH "/toys/7" for 127.0.0.1 at 2023-02-23 10:31:01 -0500
+Processing by ToysController#update as */*
+  Parameters: {"likes"=>5, "id"=>"7"}
+  [1m[36mToy Load (0.2ms)[0m  [1m[34mSELECT "toys".* FROM "toys" WHERE "toys"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/toys_controller.rb:29:in `find_toy'
+[31mUnpermitted parameter: :id[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+  [1m[36mToy Update (0.4ms)[0m  [1m[33mUPDATE "toys" SET "likes" = ?, "updated_at" = ? WHERE "toys"."id" = ?[0m  [["likes", 5], ["updated_at", "2023-02-23 15:31:01.383703"], ["id", 7]]
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 1.1ms | Allocations: 2952)
+
+
+Started PATCH "/toys/7" for 127.0.0.1 at 2023-02-23 10:31:01 -0500
+Processing by ToysController#update as */*
+  Parameters: {"likes"=>6, "id"=>"7"}
+  [1m[36mToy Load (0.2ms)[0m  [1m[34mSELECT "toys".* FROM "toys" WHERE "toys"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/toys_controller.rb:29:in `find_toy'
+[31mUnpermitted parameter: :id[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+  [1m[36mToy Update (0.2ms)[0m  [1m[33mUPDATE "toys" SET "likes" = ?, "updated_at" = ? WHERE "toys"."id" = ?[0m  [["likes", 6], ["updated_at", "2023-02-23 15:31:01.882132"], ["id", 7]]
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 1.1ms | Allocations: 2179)
+
+
+Started GET "/toys" for 127.0.0.1 at 2023-02-23 10:31:03 -0500
+Processing by ToysController#index as */*
+  [1m[36mToy Load (0.4ms)[0m  [1m[34mSELECT "toys".* FROM "toys"[0m
+  ↳ app/controllers/toys_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.4ms | Allocations: 1647)
+
+
+Started PATCH "/toys/7" for 127.0.0.1 at 2023-02-23 10:31:04 -0500
+Processing by ToysController#update as */*
+  Parameters: {"likes"=>7, "id"=>"7"}
+  [1m[36mToy Load (0.1ms)[0m  [1m[34mSELECT "toys".* FROM "toys" WHERE "toys"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/toys_controller.rb:29:in `find_toy'
+[31mUnpermitted parameter: :id[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+  [1m[36mToy Update (0.4ms)[0m  [1m[33mUPDATE "toys" SET "likes" = ?, "updated_at" = ? WHERE "toys"."id" = ?[0m  [["likes", 7], ["updated_at", "2023-02-23 15:31:04.015330"], ["id", 7]]
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 1.2ms | Allocations: 2179)
+
+
+Started PATCH "/toys/8" for 127.0.0.1 at 2023-02-23 10:31:04 -0500
+Processing by ToysController#update as */*
+  Parameters: {"likes"=>-1, "id"=>"8"}
+  [1m[36mToy Load (0.1ms)[0m  [1m[34mSELECT "toys".* FROM "toys" WHERE "toys"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/toys_controller.rb:29:in `find_toy'
+[31mUnpermitted parameter: :id[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+  [1m[36mToy Update (0.4ms)[0m  [1m[33mUPDATE "toys" SET "likes" = ?, "updated_at" = ? WHERE "toys"."id" = ?[0m  [["likes", -1], ["updated_at", "2023-02-23 15:31:04.980635"], ["id", 8]]
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 1.1ms | Allocations: 2179)
+
+
+Started PATCH "/toys/8" for 127.0.0.1 at 2023-02-23 10:31:05 -0500
+Processing by ToysController#update as */*
+  Parameters: {"likes"=>0, "id"=>"8"}
+  [1m[36mToy Load (0.1ms)[0m  [1m[34mSELECT "toys".* FROM "toys" WHERE "toys"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/toys_controller.rb:29:in `find_toy'
+[31mUnpermitted parameter: :id[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+  [1m[36mToy Update (0.4ms)[0m  [1m[33mUPDATE "toys" SET "likes" = ?, "updated_at" = ? WHERE "toys"."id" = ?[0m  [["likes", 0], ["updated_at", "2023-02-23 15:31:05.648854"], ["id", 8]]
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 1.1ms | Allocations: 2180)
+
+
+Started PATCH "/toys/8" for 127.0.0.1 at 2023-02-23 10:31:06 -0500
+Processing by ToysController#update as */*
+  Parameters: {"likes"=>1, "id"=>"8"}
+  [1m[36mToy Load (0.1ms)[0m  [1m[34mSELECT "toys".* FROM "toys" WHERE "toys"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/toys_controller.rb:29:in `find_toy'
+[31mUnpermitted parameter: :id[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+  [1m[36mToy Update (0.4ms)[0m  [1m[33mUPDATE "toys" SET "likes" = ?, "updated_at" = ? WHERE "toys"."id" = ?[0m  [["likes", 1], ["updated_at", "2023-02-23 15:31:06.084745"], ["id", 8]]
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 1.1ms | Allocations: 2179)
+
+
+Started PATCH "/toys/8" for 127.0.0.1 at 2023-02-23 10:31:06 -0500
+Processing by ToysController#update as */*
+  Parameters: {"likes"=>2, "id"=>"8"}
+  [1m[36mToy Load (0.1ms)[0m  [1m[34mSELECT "toys".* FROM "toys" WHERE "toys"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/toys_controller.rb:29:in `find_toy'
+[31mUnpermitted parameter: :id[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+  [1m[36mToy Update (0.5ms)[0m  [1m[33mUPDATE "toys" SET "likes" = ?, "updated_at" = ? WHERE "toys"."id" = ?[0m  [["likes", 2], ["updated_at", "2023-02-23 15:31:06.282503"], ["id", 8]]
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 1.4ms | Allocations: 2179)
+
+
+Started PATCH "/toys/8" for 127.0.0.1 at 2023-02-23 10:31:06 -0500
+Processing by ToysController#update as */*
+  Parameters: {"likes"=>3, "id"=>"8"}
+  [1m[36mToy Load (0.1ms)[0m  [1m[34mSELECT "toys".* FROM "toys" WHERE "toys"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/toys_controller.rb:29:in `find_toy'
+[31mUnpermitted parameter: :id[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+  [1m[36mToy Update (0.2ms)[0m  [1m[33mUPDATE "toys" SET "likes" = ?, "updated_at" = ? WHERE "toys"."id" = ?[0m  [["likes", 3], ["updated_at", "2023-02-23 15:31:06.580460"], ["id", 8]]
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 1.0ms | Allocations: 2179)
+
+
+Started PATCH "/toys/9" for 127.0.0.1 at 2023-02-23 10:31:07 -0500
+Processing by ToysController#update as */*
+  Parameters: {"likes"=>5, "id"=>"9"}
+  [1m[36mToy Load (0.2ms)[0m  [1m[34mSELECT "toys".* FROM "toys" WHERE "toys"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/toys_controller.rb:29:in `find_toy'
+[31mUnpermitted parameter: :id[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+  [1m[36mToy Update (0.5ms)[0m  [1m[33mUPDATE "toys" SET "likes" = ?, "updated_at" = ? WHERE "toys"."id" = ?[0m  [["likes", 5], ["updated_at", "2023-02-23 15:31:07.217772"], ["id", 9]]
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 1.6ms | Allocations: 2189)
+
+
+Started PATCH "/toys/4" for 127.0.0.1 at 2023-02-23 10:31:08 -0500
+Processing by ToysController#update as */*
+  Parameters: {"likes"=>9, "id"=>"4"}
+  [1m[36mToy Load (0.1ms)[0m  [1m[34mSELECT "toys".* FROM "toys" WHERE "toys"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/toys_controller.rb:29:in `find_toy'
+[31mUnpermitted parameter: :id[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+  [1m[36mToy Update (0.4ms)[0m  [1m[33mUPDATE "toys" SET "likes" = ?, "updated_at" = ? WHERE "toys"."id" = ?[0m  [["likes", 9], ["updated_at", "2023-02-23 15:31:08.015090"], ["id", 4]]
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 1.3ms | Allocations: 2179)
+
+
+Started PATCH "/toys/5" for 127.0.0.1 at 2023-02-23 10:31:08 -0500
+Processing by ToysController#update as */*
+  Parameters: {"likes"=>2, "id"=>"5"}
+  [1m[36mToy Load (0.2ms)[0m  [1m[34mSELECT "toys".* FROM "toys" WHERE "toys"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/toys_controller.rb:29:in `find_toy'
+[31mUnpermitted parameter: :id[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+  [1m[36mToy Update (0.5ms)[0m  [1m[33mUPDATE "toys" SET "likes" = ?, "updated_at" = ? WHERE "toys"."id" = ?[0m  [["likes", 2], ["updated_at", "2023-02-23 15:31:08.899400"], ["id", 5]]
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 1.3ms | Allocations: 2179)
+
+
+Started GET "/toys" for 127.0.0.1 at 2023-02-23 10:31:21 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ToysController#index as */*
+  [1m[36mToy Load (0.1ms)[0m  [1m[34mSELECT "toys".* FROM "toys"[0m
+  ↳ app/controllers/toys_controller.rb:6:in `index'
+Completed 200 OK in 8ms (Views: 3.0ms | ActiveRecord: 0.2ms | Allocations: 8466)
+
+
+Started PATCH "/toys/8" for 127.0.0.1 at 2023-02-23 10:31:27 -0500
+Processing by ToysController#update as */*
+  Parameters: {"likes"=>4, "id"=>"8"}
+  [1m[36mToy Load (0.4ms)[0m  [1m[34mSELECT "toys".* FROM "toys" WHERE "toys"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/toys_controller.rb:29:in `find_toy'
+[31mUnpermitted parameter: :id[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+  [1m[36mToy Update (1.0ms)[0m  [1m[33mUPDATE "toys" SET "likes" = ?, "updated_at" = ? WHERE "toys"."id" = ?[0m  [["likes", 4], ["updated_at", "2023-02-23 15:31:27.541909"], ["id", 8]]
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+Completed 200 OK in 16ms (Views: 0.5ms | ActiveRecord: 3.0ms | Allocations: 2894)
+
+
+Started PATCH "/toys/7" for 127.0.0.1 at 2023-02-23 10:31:28 -0500
+Processing by ToysController#update as */*
+  Parameters: {"likes"=>8, "id"=>"7"}
+  [1m[36mToy Load (0.3ms)[0m  [1m[34mSELECT "toys".* FROM "toys" WHERE "toys"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/toys_controller.rb:29:in `find_toy'
+[31mUnpermitted parameter: :id[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+  [1m[36mToy Update (0.8ms)[0m  [1m[33mUPDATE "toys" SET "likes" = ?, "updated_at" = ? WHERE "toys"."id" = ?[0m  [["likes", 8], ["updated_at", "2023-02-23 15:31:28.387752"], ["id", 7]]
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/toys_controller.rb:16:in `update'
+Completed 200 OK in 11ms (Views: 0.5ms | ActiveRecord: 2.5ms | Allocations: 2204)
+
+
+Started DELETE "/toys/7" for 127.0.0.1 at 2023-02-23 10:31:28 -0500
+  
+ActionController::RoutingError (No route matches [DELETE] "/toys/7"):
+  
+Started DELETE "/toys/7" for 127.0.0.1 at 2023-02-23 10:31:29 -0500
+  
+ActionController::RoutingError (No route matches [DELETE] "/toys/7"):
+  
+Started DELETE "/toys/7" for 127.0.0.1 at 2023-02-23 10:31:29 -0500
+  
+ActionController::RoutingError (No route matches [DELETE] "/toys/7"):
+  
+Started DELETE "/toys/7" for 127.0.0.1 at 2023-02-23 10:31:31 -0500
+  
+ActionController::RoutingError (No route matches [DELETE] "/toys/7"):
+  
+Started DELETE "/toys/7" for 127.0.0.1 at 2023-02-23 10:31:32 -0500
+  
+ActionController::RoutingError (No route matches [DELETE] "/toys/7"):
+  
+Started DELETE "/toys/9" for 127.0.0.1 at 2023-02-23 10:33:02 -0500
+  
+ActionController::RoutingError (No route matches [DELETE] "/toys/9"):
+  
+Started DELETE "/toys/9" for 127.0.0.1 at 2023-02-23 10:33:03 -0500
+  
+ActionController::RoutingError (No route matches [DELETE] "/toys/9"):
+  
+Started GET "/toys" for 127.0.0.1 at 2023-02-23 10:33:05 -0500
+Processing by ToysController#index as */*
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/toys_controller.rb:6:in `index'
+  [1m[36mToy Load (0.5ms)[0m  [1m[34mSELECT "toys".* FROM "toys"[0m
+  ↳ app/controllers/toys_controller.rb:6:in `index'
+Completed 200 OK in 18ms (Views: 15.6ms | ActiveRecord: 2.5ms | Allocations: 5212)
+
+
+Started DELETE "/toys/6" for 127.0.0.1 at 2023-02-23 10:33:14 -0500
+  
+ActionController::RoutingError (No route matches [DELETE] "/toys/6"):
+  
+Started GET "/toys" for 127.0.0.1 at 2023-02-23 10:33:39 -0500
+Processing by ToysController#index as */*
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/toys_controller.rb:6:in `index'
+  [1m[36mToy Load (0.0ms)[0m  [1m[34mSELECT "toys".* FROM "toys"[0m
+  ↳ app/controllers/toys_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.5ms | Allocations: 5168)
+
+
+Started DELETE "/toys/2" for 127.0.0.1 at 2023-02-23 10:33:41 -0500
+Processing by ToysController#destroy as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mToy Load (0.3ms)[0m  [1m[34mSELECT "toys".* FROM "toys" WHERE "toys"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/toys_controller.rb:29:in `find_toy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/toys_controller.rb:22:in `destroy'
+  [1m[36mToy Destroy (0.6ms)[0m  [1m[31mDELETE FROM "toys" WHERE "toys"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/toys_controller.rb:22:in `destroy'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/toys_controller.rb:22:in `destroy'
+Completed 204 No Content in 9ms (ActiveRecord: 2.4ms | Allocations: 1827)
+
+
+Started DELETE "/toys/4" for 127.0.0.1 at 2023-02-23 10:33:43 -0500
+Processing by ToysController#destroy as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mToy Load (0.2ms)[0m  [1m[34mSELECT "toys".* FROM "toys" WHERE "toys"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/toys_controller.rb:29:in `find_toy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/toys_controller.rb:22:in `destroy'
+  [1m[36mToy Destroy (0.6ms)[0m  [1m[31mDELETE FROM "toys" WHERE "toys"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/toys_controller.rb:22:in `destroy'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/toys_controller.rb:22:in `destroy'
+Completed 204 No Content in 6ms (ActiveRecord: 1.9ms | Allocations: 1699)
+
+
+Started DELETE "/toys/9" for 127.0.0.1 at 2023-02-23 10:33:48 -0500
+Processing by ToysController#destroy as */*
+  Parameters: {"id"=>"9"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/toys_controller.rb:29:in `find_toy'
+  [1m[36mToy Load (0.1ms)[0m  [1m[34mSELECT "toys".* FROM "toys" WHERE "toys"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/toys_controller.rb:29:in `find_toy'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/toys_controller.rb:22:in `destroy'
+  [1m[36mToy Destroy (0.4ms)[0m  [1m[31mDELETE FROM "toys" WHERE "toys"."id" = ?[0m  [["id", 9]]
+  ↳ app/controllers/toys_controller.rb:22:in `destroy'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/toys_controller.rb:22:in `destroy'
+Completed 204 No Content in 16ms (ActiveRecord: 2.1ms | Allocations: 6180)
+
+
+Started GET "/toys" for 127.0.0.1 at 2023-02-23 10:33:51 -0500
+Processing by ToysController#index as */*
+  [1m[36mToy Load (0.2ms)[0m  [1m[34mSELECT "toys".* FROM "toys"[0m
+  ↳ app/controllers/toys_controller.rb:6:in `index'
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.2ms | Allocations: 1321)
+
+
