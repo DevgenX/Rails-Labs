@@ -1,0 +1,128 @@
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "passengers"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "passengers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "rides"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "rides" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "passenger_id" integer, "taxi_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "taxis"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "taxis" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20210506153127)[0m
+  [1m[35m (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20210506153111),
+(20210506153121);
+
+[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", "2023-02-24 15:03:21.711059"], ["updated_at", "2023-02-24 15:03:21.711059"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "76ed1445ca24338883a6deb21e156c23f4cac96c"], ["created_at", "2023-02-24 15:03:21.712468"], ["updated_at", "2023-02-24 15:03:21.712468"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTaxi Create (0.3ms)[0m  [1m[32mINSERT INTO "taxis" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2023-02-24 15:03:21.737560"], ["updated_at", "2023-02-24 15:03:21.737560"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPassenger Create (0.3ms)[0m  [1m[32mINSERT INTO "passengers" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2023-02-24 15:03:21.750841"], ["updated_at", "2023-02-24 15:03:21.750841"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTaxi Create (0.0ms)[0m  [1m[32mINSERT INTO "taxis" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2023-02-24 15:03:21.751889"], ["updated_at", "2023-02-24 15:03:21.751889"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPassenger Load (0.1ms)[0m  [1m[34mSELECT "passengers".* FROM "passengers" WHERE "passengers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTaxi Load (0.0ms)[0m  [1m[34mSELECT "taxis".* FROM "taxis" WHERE "taxis"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRide Create (0.1ms)[0m  [1m[32mINSERT INTO "rides" ("passenger_id", "taxi_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["passenger_id", 1], ["taxi_id", 1], ["created_at", "2023-02-24 15:03:21.754806"], ["updated_at", "2023-02-24 15:03:21.754806"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPassenger Create (0.2ms)[0m  [1m[32mINSERT INTO "passengers" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2023-02-24 15:03:21.756902"], ["updated_at", "2023-02-24 15:03:21.756902"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTaxi Create (0.0ms)[0m  [1m[32mINSERT INTO "taxis" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2023-02-24 15:03:21.757549"], ["updated_at", "2023-02-24 15:03:21.757549"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPassenger Load (0.0ms)[0m  [1m[34mSELECT "passengers".* FROM "passengers" WHERE "passengers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTaxi Load (0.0ms)[0m  [1m[34mSELECT "taxis".* FROM "taxis" WHERE "taxis"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRide Create (0.0ms)[0m  [1m[32mINSERT INTO "rides" ("passenger_id", "taxi_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["passenger_id", 1], ["taxi_id", 1], ["created_at", "2023-02-24 15:03:21.758363"], ["updated_at", "2023-02-24 15:03:21.758363"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPassenger Create (0.1ms)[0m  [1m[32mINSERT INTO "passengers" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2023-02-24 15:03:21.759274"], ["updated_at", "2023-02-24 15:03:21.759274"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTaxi Create (0.0ms)[0m  [1m[32mINSERT INTO "taxis" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2023-02-24 15:03:21.760861"], ["updated_at", "2023-02-24 15:03:21.760861"]]
+  [1m[36mRide Create (0.0ms)[0m  [1m[32mINSERT INTO "rides" ("passenger_id", "taxi_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["passenger_id", 1], ["taxi_id", 1], ["created_at", "2023-02-24 15:03:21.761144"], ["updated_at", "2023-02-24 15:03:21.761144"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTaxi Create (0.3ms)[0m  [1m[32mINSERT INTO "taxis" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2023-02-24 15:03:53.960455"], ["updated_at", "2023-02-24 15:03:53.960455"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPassenger Create (0.1ms)[0m  [1m[32mINSERT INTO "passengers" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2023-02-24 15:03:53.971464"], ["updated_at", "2023-02-24 15:03:53.971464"]]
+  [1m[36mRide Create (0.0ms)[0m  [1m[32mINSERT INTO "rides" ("passenger_id", "taxi_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["passenger_id", 1], ["taxi_id", 1], ["created_at", "2023-02-24 15:03:53.971923"], ["updated_at", "2023-02-24 15:03:53.971923"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPassenger Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "passengers" INNER JOIN "rides" ON "passengers"."id" = "rides"."passenger_id" WHERE "rides"."taxi_id" = ? AND "passengers"."id" = ? LIMIT ?[0m  [["taxi_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPassenger Create (0.2ms)[0m  [1m[32mINSERT INTO "passengers" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2023-02-24 15:03:53.977199"], ["updated_at", "2023-02-24 15:03:53.977199"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTaxi Create (0.0ms)[0m  [1m[32mINSERT INTO "taxis" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2023-02-24 15:03:53.977742"], ["updated_at", "2023-02-24 15:03:53.977742"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPassenger Load (0.0ms)[0m  [1m[34mSELECT "passengers".* FROM "passengers" WHERE "passengers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTaxi Load (0.0ms)[0m  [1m[34mSELECT "taxis".* FROM "taxis" WHERE "taxis"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRide Create (0.0ms)[0m  [1m[32mINSERT INTO "rides" ("passenger_id", "taxi_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["passenger_id", 1], ["taxi_id", 1], ["created_at", "2023-02-24 15:03:53.978693"], ["updated_at", "2023-02-24 15:03:53.978693"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPassenger Create (0.1ms)[0m  [1m[32mINSERT INTO "passengers" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2023-02-24 15:03:53.979361"], ["updated_at", "2023-02-24 15:03:53.979361"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTaxi Create (0.0ms)[0m  [1m[32mINSERT INTO "taxis" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2023-02-24 15:03:53.979777"], ["updated_at", "2023-02-24 15:03:53.979777"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPassenger Load (0.0ms)[0m  [1m[34mSELECT "passengers".* FROM "passengers" WHERE "passengers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTaxi Load (0.0ms)[0m  [1m[34mSELECT "taxis".* FROM "taxis" WHERE "taxis"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRide Create (0.0ms)[0m  [1m[32mINSERT INTO "rides" ("passenger_id", "taxi_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["passenger_id", 1], ["taxi_id", 1], ["created_at", "2023-02-24 15:03:53.980433"], ["updated_at", "2023-02-24 15:03:53.980433"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPassenger Create (0.1ms)[0m  [1m[32mINSERT INTO "passengers" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2023-02-24 15:03:53.981328"], ["updated_at", "2023-02-24 15:03:53.981328"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTaxi Create (0.0ms)[0m  [1m[32mINSERT INTO "taxis" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2023-02-24 15:03:53.982412"], ["updated_at", "2023-02-24 15:03:53.982412"]]
+  [1m[36mRide Create (0.0ms)[0m  [1m[32mINSERT INTO "rides" ("passenger_id", "taxi_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["passenger_id", 1], ["taxi_id", 1], ["created_at", "2023-02-24 15:03:53.982771"], ["updated_at", "2023-02-24 15:03:53.982771"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTaxi Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "taxis" INNER JOIN "rides" ON "taxis"."id" = "rides"."taxi_id" WHERE "rides"."passenger_id" = ? AND "taxis"."id" = ? LIMIT ?[0m  [["passenger_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m

@@ -1,0 +1,407 @@
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateMovies (20210524131844)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "movies" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "year" integer, "length" integer, "description" varchar, "poster_url" varchar, "category" varchar, "discount" boolean, "director_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210524131844"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateDirectors (20210524132154)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "directors" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "birthplace" varchar, "female_director" boolean, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210524132154"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateReviews (20210524182338)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "author" varchar, "date" varchar, "url" varchar, "movie_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210524182338"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-02-25 03:56:02.078402"], ["updated_at", "2023-02-25 03:56:02.078402"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDirector Create (0.2ms)[0m  [1m[32mINSERT INTO "directors" ("name", "birthplace", "female_director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Steven Spielberg"], ["birthplace", "Cincinnati, OH"], ["female_director", 0], ["created_at", "2023-02-25 03:56:02.093032"], ["updated_at", "2023-02-25 03:56:02.093032"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "movies" ("title", "year", "length", "description", "poster_url", "category", "discount", "director_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "The Color Purple"], ["year", 1985], ["length", 154], ["description", "Whoopi Goldberg brings Alice Walker's Pulitzer Prize-winning feminist novel to life as Celie, a Southern woman who suffered abuse over decades. A project brought to a hesitant Steven Spielberg by producer Quincy Jones, the film marks Spielberg's first female lead."], ["poster_url", "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/3071/3071213_so.jpg"], ["category", "Drama"], ["discount", 0], ["director_id", 1], ["created_at", "2023-02-25 03:56:02.105646"], ["updated_at", "2023-02-25 03:56:02.105646"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mReview Create (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("author", "date", "url", "movie_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["author", "Roger Ebert"], ["date", "December 20, 1985"], ["url", "https://www.rogerebert.com/reviews/the-color-purple-1985"], ["movie_id", 1], ["created_at", "2023-02-25 03:56:02.109820"], ["updated_at", "2023-02-25 03:56:02.109820"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mReview Create (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("author", "date", "url", "movie_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["author", "Variety Staff"], ["date", "December 31, 1984"], ["url", "https://variety.com/1984/film/reviews/the-color-purple-1200426436/"], ["movie_id", 1], ["created_at", "2023-02-25 03:56:02.111153"], ["updated_at", "2023-02-25 03:56:02.111153"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mReview Create (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("author", "date", "url", "movie_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["author", "Janet Maslin"], ["date", "December 18, 1985"], ["url", "https://www.nytimes.com/1985/12/18/movies/moviesspecial/the-color-purple.html"], ["movie_id", 1], ["created_at", "2023-02-25 03:56:02.112358"], ["updated_at", "2023-02-25 03:56:02.112358"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDirector Create (0.1ms)[0m  [1m[32mINSERT INTO "directors" ("name", "birthplace", "female_director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Julie Taymor"], ["birthplace", "Newton, MA"], ["female_director", 1], ["created_at", "2023-02-25 03:56:02.113531"], ["updated_at", "2023-02-25 03:56:02.113531"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (0.1ms)[0m  [1m[32mINSERT INTO "movies" ("title", "year", "length", "description", "poster_url", "category", "discount", "director_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Frida"], ["year", 2002], ["length", 123], ["description", "Her portrait, with that thick unibrow and un-waxed upper lip, has become an iconic symbol of feminism. Julie Taymor's biopic takes us behind the canvas to reveal the artist, the activist, the revolutionary. And knowing what we do now about lead actress Selma Hayek's off-screen experience, this film proves an even greater victory."], ["poster_url", "https://m.media-amazon.com/images/M/MV5BYzUxMTU0ZmEtZWE0Ni00NzJlLThhZTUtNDA1ZDZjZDUxYThiXkEyXkFqcGdeQXVyNjk1Njg5NTA@._V1_.jpg"], ["category", "Drama"], ["discount", 0], ["director_id", 2], ["created_at", "2023-02-25 03:56:02.114751"], ["updated_at", "2023-02-25 03:56:02.114751"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDirector Create (0.2ms)[0m  [1m[32mINSERT INTO "directors" ("name", "birthplace", "female_director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Mira Nair"], ["birthplace", "Bhubaneshwar, Orissa, India"], ["female_director", 1], ["created_at", "2023-02-25 03:56:02.115934"], ["updated_at", "2023-02-25 03:56:02.115934"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (0.1ms)[0m  [1m[32mINSERT INTO "movies" ("title", "year", "length", "description", "poster_url", "category", "discount", "director_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Queen of Katwe"], ["year", 2016], ["length", 144], ["description", "Disney has a way of making us feel like pawns in a game of Let's See How Hard We Can Make Them Cry. But that's not the case with Mira Nair's feel-good drama about a Uganda girl's path to chess champ, adapted from an ESPN sports essay. Moms and dads, you want your daughters to grow up to be chess champions."], ["poster_url", "https://www.gstatic.com/tv/thumb/v22vodart/12806084/p12806084_v_v8_ar.jpg"], ["category", "Drama"], ["discount", 0], ["director_id", 3], ["created_at", "2023-02-25 03:56:02.117406"], ["updated_at", "2023-02-25 03:56:02.117406"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for ::1 at 2023-02-24 22:56:11 -0500
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/bstignzales/.rvm/gems/ruby-2.7.4/gems/railties-6.1.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/bstignzales/.rvm/gems/ruby-2.7.4/gems/railties-6.1.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 3.6ms | Allocations: 343)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.0ms | Allocations: 1827)
+
+
+Started GET "/movie_summaries" for ::1 at 2023-02-24 22:56:15 -0500
+Processing by MoviesController#summaries as HTML
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/controllers/movies_controller.rb:21:in `summaries'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.6ms)
+Completed 200 OK in 30ms (Views: 15.3ms | ActiveRecord: 0.8ms | Allocations: 9676)
+
+
+Started GET "/movies" for ::1 at 2023-02-24 22:56:20 -0500
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/controllers/movies_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.82ms)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.2ms | Allocations: 1418)
+
+
+Started GET "/movies/1" for ::1 at 2023-02-24 22:56:22 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:27:in `find_movie'
+[active_model_serializers] Rendered MovieSerializer with ActiveModelSerializers::Adapter::Attributes (0.64ms)
+Completed 200 OK in 7ms (Views: 1.5ms | ActiveRecord: 0.4ms | Allocations: 1233)
+
+
+Started GET "/movies/2" for ::1 at 2023-02-24 22:56:23 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:27:in `find_movie'
+[active_model_serializers] Rendered MovieSerializer with ActiveModelSerializers::Adapter::Attributes (0.44ms)
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.2ms | Allocations: 686)
+
+
+Started GET "/director" for ::1 at 2023-02-24 22:57:10 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/director"):
+  
+Started GET "/directors" for ::1 at 2023-02-24 22:57:12 -0500
+Processing by DirectorsController#index as HTML
+  [1m[36mDirector Load (0.4ms)[0m  [1m[34mSELECT "directors".* FROM "directors"[0m
+  ↳ app/controllers/directors_controller.rb:6:in `index'
+No serializer found for resource: #<Director id: 1, name: "Steven Spielberg", birthplace: "Cincinnati, OH", female_director: false, created_at: "2023-02-25 03:56:02.093032000 +0000", updated_at: "2023-02-25 03:56:02.093032000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Director::ActiveRecord_Relation (0.51ms)
+Completed 200 OK in 14ms (Views: 10.2ms | ActiveRecord: 1.5ms | Allocations: 4988)
+
+
+Started GET "/directors" for ::1 at 2023-02-24 22:57:48 -0500
+Processing by DirectorsController#index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/directors_controller.rb:6:in `index'
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors"[0m
+  ↳ app/controllers/directors_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.63ms)
+Completed 200 OK in 12ms (Views: 9.6ms | ActiveRecord: 1.0ms | Allocations: 5415)
+
+
+Started GET "/movies/1" for ::1 at 2023-02-24 22:58:56 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/movies_controller.rb:27:in `find_movie'
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:27:in `find_movie'
+[active_model_serializers]   [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors" WHERE "directors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/movies_controller.rb:11:in `show'
+[active_model_serializers] Rendered MovieSerializer with ActiveModelSerializers::Adapter::Attributes (8.62ms)
+Completed 200 OK in 22ms (Views: 11.9ms | ActiveRecord: 1.2ms | Allocations: 14517)
+
+
+Started GET "/movies/1" for ::1 at 2023-02-24 22:59:02 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/movies_controller.rb:27:in `find_movie'
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:27:in `find_movie'
+[active_model_serializers] Rendered MovieSerializer with ActiveModelSerializers::Adapter::Attributes (0.39ms)
+Completed 200 OK in 16ms (Views: 1.7ms | ActiveRecord: 1.0ms | Allocations: 7131)
+
+
+Started GET "/movies/1" for ::1 at 2023-02-24 22:59:06 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/movies_controller.rb:27:in `find_movie'
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:27:in `find_movie'
+[active_model_serializers]   [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors" WHERE "directors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/movies_controller.rb:11:in `show'
+[active_model_serializers] Rendered MovieSerializer with ActiveModelSerializers::Adapter::Attributes (8.8ms)
+Completed 200 OK in 33ms (Views: 9.6ms | ActiveRecord: 1.6ms | Allocations: 11752)
+
+
+Started GET "/directors/1" for ::1 at 2023-02-24 22:59:39 -0500
+Processing by DirectorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/directors_controller.rb:10:in `show'
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors" WHERE "directors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/directors_controller.rb:10:in `show'
+[active_model_serializers]   [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."director_id" = ?[0m  [["director_id", 1]]
+[active_model_serializers]   ↳ app/controllers/directors_controller.rb:11:in `show'
+[active_model_serializers] Rendered DirectorSerializer with ActiveModelSerializers::Adapter::Attributes (16.84ms)
+Completed 200 OK in 28ms (Views: 18.3ms | ActiveRecord: 1.4ms | Allocations: 13302)
+
+
+Started GET "/directors/2" for ::1 at 2023-02-24 22:59:41 -0500
+Processing by DirectorsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mDirector Load (0.2ms)[0m  [1m[34mSELECT "directors".* FROM "directors" WHERE "directors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/directors_controller.rb:10:in `show'
+[active_model_serializers]   [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."director_id" = ?[0m  [["director_id", 2]]
+[active_model_serializers]   ↳ app/controllers/directors_controller.rb:11:in `show'
+[active_model_serializers] Rendered DirectorSerializer with ActiveModelSerializers::Adapter::Attributes (3.14ms)
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.4ms | Allocations: 1658)
+
+
+Started GET "/directors/2" for ::1 at 2023-02-24 22:59:50 -0500
+Processing by DirectorsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/directors_controller.rb:10:in `show'
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors" WHERE "directors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/directors_controller.rb:10:in `show'
+[active_model_serializers] Rendered DirectorSerializer with ActiveModelSerializers::Adapter::Attributes (0.34ms)
+Completed 200 OK in 11ms (Views: 1.3ms | ActiveRecord: 0.9ms | Allocations: 4924)
+
+
+Started GET "/directors/2" for ::1 at 2023-02-24 22:59:55 -0500
+Processing by DirectorsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/directors_controller.rb:10:in `show'
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors" WHERE "directors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/directors_controller.rb:10:in `show'
+[active_model_serializers]   [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."director_id" = ?[0m  [["director_id", 2]]
+[active_model_serializers]   ↳ app/controllers/directors_controller.rb:11:in `show'
+[active_model_serializers] Rendered DirectorSerializer with ActiveModelSerializers::Adapter::Attributes (15.0ms)
+Completed 200 OK in 26ms (Views: 15.3ms | ActiveRecord: 1.8ms | Allocations: 11886)
+
+
+Started GET "/reviews" for ::1 at 2023-02-24 23:04:25 -0500
+Processing by ReviewsController#index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.39ms)
+Completed 200 OK in 12ms (Views: 10.0ms | ActiveRecord: 1.6ms | Allocations: 5695)
+
+
+Started GET "/reviews" for ::1 at 2023-02-24 23:05:43 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/reviews"):
+  
+Started GET "/reviews" for ::1 at 2023-02-24 23:05:55 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/reviews"):
+  
+Started GET "/reviews" for ::1 at 2023-02-24 23:05:56 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/reviews"):
+  
+Started GET "/reviews" for ::1 at 2023-02-24 23:06:19 -0500
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for ReviewsController):
+  
+actionpack (6.1.3.2) lib/abstract_controller/base.rb:160:in `process'
+actionpack (6.1.3.2) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.3.2) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.3.2) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.3.2) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.3.2) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.3.2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.3.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.3.2) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.1.3.2) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.3.2) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.3.2) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.3.2) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.3.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+railties (6.1.3.2) lib/rails/engine.rb:539:in `call'
+puma (5.3.2) lib/puma/configuration.rb:249:in `call'
+puma (5.3.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.3.2) lib/puma/thread_pool.rb:338:in `with_force_shutdown'
+puma (5.3.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.3.2) lib/puma/server.rb:438:in `process_client'
+puma (5.3.2) lib/puma/thread_pool.rb:145:in `block in spawn_thread'
+Started GET "/reviews" for ::1 at 2023-02-24 23:06:39 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/reviews"):
+  
+Started GET "/reviews" for ::1 at 2023-02-24 23:07:23 -0500
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for ReviewsController):
+  
+actionpack (6.1.3.2) lib/abstract_controller/base.rb:160:in `process'
+actionpack (6.1.3.2) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.3.2) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.3.2) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.3.2) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.3.2) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.3.2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.3.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.3.2) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.1.3.2) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.3.2) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.3.2) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.3.2) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.3.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+railties (6.1.3.2) lib/rails/engine.rb:539:in `call'
+puma (5.3.2) lib/puma/configuration.rb:249:in `call'
+puma (5.3.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.3.2) lib/puma/thread_pool.rb:338:in `with_force_shutdown'
+puma (5.3.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.3.2) lib/puma/server.rb:438:in `process_client'
+puma (5.3.2) lib/puma/thread_pool.rb:145:in `block in spawn_thread'
+Started GET "/movies/1" for ::1 at 2023-02-24 23:07:27 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/movies_controller.rb:27:in `find_movie'
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:27:in `find_movie'
+[active_model_serializers]   [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors" WHERE "directors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/movies_controller.rb:11:in `show'
+[active_model_serializers] Rendered MovieSerializer with ActiveModelSerializers::Adapter::Attributes (7.4ms)
+Completed 200 OK in 29ms (Views: 8.0ms | ActiveRecord: 2.5ms | Allocations: 11996)
+
+
+Started GET "/movies/1" for ::1 at 2023-02-24 23:08:15 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/movies_controller.rb:27:in `find_movie'
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:27:in `find_movie'
+[active_model_serializers]   [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors" WHERE "directors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/movies_controller.rb:11:in `show'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 1]]
+[active_model_serializers]   ↳ app/controllers/movies_controller.rb:11:in `show'
+[active_model_serializers] Rendered MovieSerializer with ActiveModelSerializers::Adapter::Attributes (16.07ms)
+Completed 200 OK in 31ms (Views: 16.4ms | ActiveRecord: 2.1ms | Allocations: 17055)
+
+
+Started GET "/" for ::1 at 2023-02-24 23:08:30 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/bstignzales/.rvm/gems/ruby-2.7.4/gems/railties-6.1.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/bstignzales/.rvm/gems/ruby-2.7.4/gems/railties-6.1.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 7.9ms | Allocations: 181)
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.0ms | Allocations: 768)
+
+
+Started GET "/directors/1" for ::1 at 2023-02-24 23:08:33 -0500
+Processing by DirectorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDirector Load (0.4ms)[0m  [1m[34mSELECT "directors".* FROM "directors" WHERE "directors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/directors_controller.rb:10:in `show'
+[active_model_serializers]   [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."director_id" = ?[0m  [["director_id", 1]]
+[active_model_serializers]   ↳ app/controllers/directors_controller.rb:11:in `show'
+[active_model_serializers] Rendered DirectorSerializer with ActiveModelSerializers::Adapter::Attributes (4.86ms)
+Completed 200 OK in 9ms (Views: 5.5ms | ActiveRecord: 0.7ms | Allocations: 1947)
+
+
+Started GET "/directors/1" for ::1 at 2023-02-24 23:09:48 -0500
+Processing by DirectorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/directors_controller.rb:10:in `show'
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors" WHERE "directors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/directors_controller.rb:10:in `show'
+[active_model_serializers]   [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."director_id" = ?[0m  [["director_id", 1]]
+[active_model_serializers]   ↳ app/controllers/directors_controller.rb:11:in `show'
+[active_model_serializers] Rendered DirectorSerializer with ActiveModelSerializers::Adapter::Attributes (11.87ms)
+Completed 200 OK in 25ms (Views: 12.7ms | ActiveRecord: 1.8ms | Allocations: 11714)
+
+
+Started GET "/directors/1" for ::1 at 2023-02-24 23:09:48 -0500
+Processing by DirectorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDirector Load (0.3ms)[0m  [1m[34mSELECT "directors".* FROM "directors" WHERE "directors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/directors_controller.rb:10:in `show'
+[active_model_serializers]   [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."director_id" = ?[0m  [["director_id", 1]]
+[active_model_serializers]   ↳ app/controllers/directors_controller.rb:11:in `show'
+[active_model_serializers] Rendered DirectorSerializer with ActiveModelSerializers::Adapter::Attributes (3.38ms)
+Completed 200 OK in 6ms (Views: 3.9ms | ActiveRecord: 0.5ms | Allocations: 1646)
+
+
+Started GET "/directors/1" for ::1 at 2023-02-24 23:10:17 -0500
+Processing by DirectorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/directors_controller.rb:10:in `show'
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors" WHERE "directors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/directors_controller.rb:10:in `show'
+[active_model_serializers]   [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."director_id" = ?[0m  [["director_id", 1]]
+[active_model_serializers]   ↳ app/controllers/directors_controller.rb:11:in `show'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 1]]
+[active_model_serializers]   ↳ app/controllers/directors_controller.rb:11:in `show'
+[active_model_serializers] Rendered DirectorSerializer with ActiveModelSerializers::Adapter::Attributes (19.26ms)
+Completed 200 OK in 31ms (Views: 19.7ms | ActiveRecord: 2.0ms | Allocations: 17010)
+
+
