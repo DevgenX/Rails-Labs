@@ -1,2 +1,4 @@
 # Rails-Labs
-Just a collection of Rails Labs
+This is just a collection of Rails Labs
+
+
